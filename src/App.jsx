@@ -7,6 +7,7 @@ import PopularCategories from "./components/homepage01/PopularCategories";
 import PopularProducts from "./components/homepage01/PopularProducts";
 import SaleImages from "./components/homepage01/SaleImages";
 import DiscountBanner from "./components/homepage01/discountBanner";
+import LatestNews from "./components/homepage01/LatestNews";
 
 
 
@@ -20,6 +21,7 @@ return (
   <PopularProducts />
   <SaleImages />
   <DiscountBanner/>
+  <LatestNews />
   <Footer />
 </div>
 </Router>
