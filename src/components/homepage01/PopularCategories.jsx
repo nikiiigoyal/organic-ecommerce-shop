@@ -68,9 +68,7 @@ return (
    <h2 className="text-2xl font-bold">Popular Categories</h2>
    <a href="/categories" className="text-green-500 hover:text-green-600 flex items-center">
           View All
-          <svg className="w-5 h-5 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-          </svg>
+          <img src="/src/components/images/arrow.svg" className="pl-1"></img>
         </a>
        </div>
        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">

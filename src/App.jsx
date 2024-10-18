@@ -8,6 +8,9 @@ import PopularProducts from "./components/homepage01/PopularProducts";
 import SaleImages from "./components/homepage01/SaleImages";
 import DiscountBanner from "./components/homepage01/discountBanner";
 import LatestNews from "./components/homepage01/LatestNews";
+import TestimonialCard from "./components/homepage01/Testimonials";
+import Follow from "./components/homepage01/Follow";
+
 
 
 
@@ -18,10 +21,12 @@ return (
   <Header />
   <BannerAndFeatures />
   <PopularCategories />
-  <PopularProducts />
+   <PopularProducts /> 
   <SaleImages />
   <DiscountBanner/>
   <LatestNews />
+  <TestimonialCard/>
+  <Follow />
   <Footer />
 </div>
 </Router>
