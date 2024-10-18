@@ -6,6 +6,7 @@ import Footer from "./components/homepage01/Footer";
 import PopularCategories from "./components/homepage01/PopularCategories";
 import PopularProducts from "./components/homepage01/PopularProducts";
 import SaleImages from "./components/homepage01/SaleImages";
+import DiscountBanner from "./components/homepage01/discountBanner";
 
 
 
@@ -18,6 +19,7 @@ return (
   <PopularCategories />
   <PopularProducts />
   <SaleImages />
+  <DiscountBanner/>
   <Footer />
 </div>
 </Router>
