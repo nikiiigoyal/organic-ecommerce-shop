@@ -4,12 +4,14 @@ import Header from "./components/homepage01/Header";
 import BannerAndFeatures from "./components/homepage01/Banner01";
 import Footer from "./components/homepage01/Footer";
 import PopularCategories from "./components/homepage01/PopularCategories";
-import PopularProducts from "./components/homepage01/PopularProducts";
 import SaleImages from "./components/homepage01/SaleImages";
 import DiscountBanner from "./components/homepage01/discountBanner";
 import LatestNews from "./components/homepage01/LatestNews";
 import TestimonialCard from "./components/homepage01/Testimonials";
 import Follow from "./components/homepage01/Follow";
+import ProductsView from "./components/homepage01/Productsview";
+import { products } from "./constants";
+import HotDeals from "./components/homepage01/HotDeals";
 
 
 
@@ -21,9 +23,11 @@ return (
   <Header />
   <BannerAndFeatures />
   <PopularCategories />
-   <PopularProducts /> 
+   <ProductsView products={products.slice(0,10)} heading="Popular Products"/>
   <SaleImages />
   <DiscountBanner/>
+  <HotDeals />
+  <ProductsView products={products.slice(0,5)} heading="Featured Products"/>
   <LatestNews />
   <TestimonialCard/>
   <Follow />
