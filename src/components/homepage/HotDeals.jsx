@@ -1,6 +1,6 @@
 import { products } from "../../constants";
 
-// eslint-disable-next-line react/prop-types
+
 const HotDeals = () => {
     const featuredProduct = products.find(product => product.featured);
     const otherProducts = products.filter(product => !product.featured);
