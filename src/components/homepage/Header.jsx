@@ -60,7 +60,7 @@ const Header = () => {
               <li><Link to="/contact" className="py-3 px-2 inline-block">Contact Us</Link></li>
           </ul>
           <div className="phone text-white flex items-center gap-[8px]">
-            <img src="/src/components/images/vector.png"></img>
+            <img src="/src/components/images/phone.png"></img>
             <span>(219) 555-0114</span>
           </div>
           
