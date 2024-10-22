@@ -6,6 +6,7 @@ import { CreateForm } from "./components/CreateAccount";
 import { ErrorPage } from "./components/ErrorPage";
 import { Faq } from "./components/Faq's";
 import { Contact } from "./components/Contact";
+import { About } from "./components/About";
 
 
 
@@ -21,6 +22,7 @@ return (
   <ErrorPage />
   <Faq />
   <Contact />
+  <About />
 </div>
 </Router>
 )
