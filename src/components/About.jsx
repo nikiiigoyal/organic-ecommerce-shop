@@ -1,3 +1,5 @@
+import TeamSection from "./TeamMembers";
+
 export function About () {
     return (
         <>
@@ -101,6 +103,9 @@ export function About () {
             </div>
             <img src="/src/components/images/faqimg.png" className="w-[400px]"></img>
             </div>
+        </div>
+        <div className="w-[80%] mx-auto">
+            <TeamSection />
         </div>
         </>
     )
