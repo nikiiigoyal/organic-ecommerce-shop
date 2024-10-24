@@ -1,4 +1,4 @@
-import { products } from "../../constants";
+import { products } from "../../../../constants";
 
 
 const HotDeals = () => {

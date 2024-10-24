@@ -1,30 +1,36 @@
 
-import { BrowserRouter as Router } from "react-router-dom";
-import Homepage from "./components/homepage";
-import { SignInForm } from "./components/SignInform";
-import { CreateForm } from "./components/CreateAccount";
-import { ErrorPage } from "./components/ErrorPage";
-import { Faq } from "./components/Faq's";
-import { Contact } from "./components/Contact";
-import { About } from "./components/About";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+// import { Layout } from "./components/layout/layout";
 
+import { Faq } from "./components/pages/Faq's";
+import { SignInForm } from "./components/pages/SignInform";
+import { CreateForm } from "./components/pages/CreateAccount";
+import { ErrorPage } from "./components/pages/ErrorPage";
+import Homepage from "./components/pages/homepage/sections";
+import { Layout } from "./components/layout/layout";
 
-
-
+// import Homepage from "./components/pages/homepage/sections";
 
 function App() {
 return (
-  <Router>
-<div className="App">
-  <Homepage />
-  <SignInForm />
-  <CreateForm />
-  <ErrorPage />
-  <Faq />
-  <Contact />
-  <About />
-</div>
-</Router>
+  <BrowserRouter>
+  
+  {/* <Layout> */}
+    <Routes>
+      {/* public routes */}
+      
+      <Route path="/" element={<Layout />}>
+   <Route index element={<Homepage />}></Route>
+   <Route path="/signin" element={<SignInForm />}></Route>
+   <Route path="/register" element={<CreateForm />}></Route>
+   <Route path="/faq" element= {<Faq />}></Route>
+   <Route path="*" element= {<ErrorPage />}></Route>
+   </Route>
+  </Routes>
+  {/* </Layout> */}
+  </BrowserRouter>
+  
+
 )
 }
 
