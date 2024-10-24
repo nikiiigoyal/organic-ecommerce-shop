@@ -8,6 +8,7 @@ import { CreateForm } from "./components/pages/CreateAccount";
 import { ErrorPage } from "./components/pages/ErrorPage";
 import Homepage from "./components/pages/homepage/sections";
 import { Layout } from "./components/layout/layout";
+import { ShopPage } from "./components/pages/shopPage";
 
 // import Homepage from "./components/pages/homepage/sections";
 
@@ -21,6 +22,7 @@ return (
       
       <Route path="/" element={<Layout />}>
    <Route index element={<Homepage />}></Route>
+   <Route path="/shop" element={<ShopPage />}></Route>
    <Route path="/signin" element={<SignInForm />}></Route>
    <Route path="/register" element={<CreateForm />}></Route>
    <Route path="/faq" element= {<Faq />}></Route>
