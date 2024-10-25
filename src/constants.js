@@ -19,7 +19,12 @@ export const products = [
     oldPrice: 24.00,
     image: "/src/components/images/popularproduct.png",
     rating: 4,
-   featured: true
+   featured: true,
+   brand: 'Farmery',
+  brandImage: '/path-to-brand-logo.jpg',
+  description: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra...',
+  category: 'Vegetables',
+  tags: ['Vegetables', 'Healthy', 'Chinese', 'Cabbage', 'Green Cabbage']
 },
 {id: 4,
     name: "Green Lettuce",

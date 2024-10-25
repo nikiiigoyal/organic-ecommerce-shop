@@ -9,7 +9,7 @@ export const Layout = () => {
         <Header />
         <main>
             <Outlet />
-        </main>
+      </main>
         <Footer />
         </>
     )
