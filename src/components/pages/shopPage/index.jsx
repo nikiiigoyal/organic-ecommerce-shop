@@ -13,8 +13,10 @@ export function ShopPage () {
 
     
     const handleQuickView = (product) => {
+        console.log("Quick View clicked for:", product); 
         setSelectedProduct(product)
         setIsQuickViewOpen(true)
+        console.log("Modal open status:", isQuickViewOpen);
     }
     return (
         <>
@@ -37,9 +39,13 @@ export function ShopPage () {
           ))}
         </div>
         </div>
-        <QuickViewModal product={selectedProduct}
+        {isQuickViewOpen && (
+    <QuickViewModal 
+        product={selectedProduct}
         isOpen={isQuickViewOpen}
-        onClose={()=> setIsQuickViewOpen(false)} />
+        onClose={() => setIsQuickViewOpen(false)} 
+    />
+)}
         </>
     )
 }

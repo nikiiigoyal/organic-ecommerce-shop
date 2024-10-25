@@ -21,7 +21,7 @@ export const products = [
     rating: 4,
    featured: true,
    brand: 'Farmery',
-  brandImage: '/path-to-brand-logo.jpg',
+  brandImage: '/src/components/images/brandimg.png',
   description: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra...',
   category: 'Vegetables',
   tags: ['Vegetables', 'Healthy', 'Chinese', 'Cabbage', 'Green Cabbage']

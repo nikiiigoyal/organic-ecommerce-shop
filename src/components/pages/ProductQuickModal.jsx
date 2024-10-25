@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react"
 
-// eslint-disable-next-line react/prop-types
-export const QuickViewModal = ({products , isOpen, onClose}) => {
+
+export const QuickViewModal = ({product , isOpen, onClose}) => {
+    console.log("QuickViewModal received product:", product); // Check if the product data is passed correctly
+    console.log("QuickViewModal open status:", isOpen); 
 
     const [quantity , setQuantity] = useState(5);
 
@@ -28,36 +30,41 @@ export const QuickViewModal = ({products , isOpen, onClose}) => {
         }
     },[isOpen]);
 
-    if (!isOpen || !products) return null;
+    if (!isOpen || !product){
+        console.log("QuickViewModal returning null, modal not visible")
+         return null;
+    }
 return (
     <>
     {/* overlay */}
-    <diV className="fixed inset-0 bg-black bg-opacity-50 z-50" onClick={onClose}>
-</diV>
+    <div className="font-poppins fixed inset-0 flex items-center justify-center z-50 ">
+    {/* Overlay */}
+    <div className="absolute inset-0 bg-black bg-opacity-50" onClick={onClose}></div>
+
 {/* modal */}
-<div className="flex min-h-full items-center justify-center p-4">
-    <div className="relative bg-white w-full max-w-4xl rounded-lg">
+<div className="flex min-h-full items-center justify-center p-">
+    <div className="relative bg-white w-full max-w-[90%] rounded-lg">
    {/* close button */}
-   <button className="absolute right-4 top-4 p-1 hover:bg-gray-100 rounded-full z-10" onClick={onClose}><img src="closeicon.svg"></img></button>
+   <button className="absolute right-4 top-[-32px] hover:bg-gray-100 bg-black rounded-full z-10" onClick={onClose}><img src="/src/components/images/closeicon.svg"></img></button>
 
    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
     {/* left side image gallry */}
-    <div className="space-y-4">
-                                <div className="aspect-square relative">
+    <div className="flex flex-row-reverse justify-end">
+                                <div className="relative">
                                     <img
-                                        src={products.image}
-                                        alt={products.name}
+                                        src={product.image}
+                                        alt={product.name}
                                         className="w-full h-full object-contain"
                                     />
                                 </div>
-                                <div className="flex gap-2">
+                                <div className="flex gap-2 flex-col">
                                     {[1, 2, 3, 4].map((num) => (
                                         <button 
                                             key={num} 
                                             className="w-20 h-20 border rounded-lg p-1 hover:border-green-500"
                                         >
                                             <img
-                                                src={products.image}
+                                                src={product.image}
                                                 alt={`View ${num}`}
                                                 className="w-full h-full object-contain"
                                             />
@@ -68,7 +75,7 @@ return (
 {/* right side  */}
 <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <h2 className="text-2xl font-semibold">{products.name}</h2>
+                  <h2 className="text-2xl font-semibold">{product.name}</h2>
                   <span className="bg-green-100 text-green-800 text-sm px-2 py-1 rounded">
                     In Stock
                   </span>
@@ -81,38 +88,59 @@ return (
                   </div>
                   <span className="text-gray-600 text-sm">4 Review</span>
                   <span className="text-gray-400">|</span>
-                  <span className="text-gray-600 text-sm">SKU: {products.sku}</span>
+                  <span className="text-gray-600 text-sm">SKU: {product.sku}</span>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <span className="text-2xl font-bold text-green-600">
-                    ${products.price}
+                    ${product.price}
                   </span>
-                  {products.oldPrice && (
+                  {product.oldPrice && (
                     <>
                       <span className="text-gray-400 line-through">
-                        ${products.oldPrice}
+                        ${product.oldPrice}
                       </span>
-                      <span className="text-red-500 text-sm">
-                        {Math.round(((products.oldPrice - products.price) / products.oldPrice) * 100)}% Off
+                      <span className="bg-[#EA4B481A] text-[#EA4B48] text-sm p-1 rounded-full">
+                        {Math.round(((product.oldPrice - product.price) / product.oldPrice) * 100)}% Off
                       </span>
                     </>
                   )}
                 </div>
 
-                <div>
+                <div className="flex flex-row text-sm justify-between">
                   <div className="flex items-center gap-2 mb-2">
+                  <span className="text-gray-600">Brand:</span>
+                    
                     <img 
                       
-                      src={products.brandImage} 
-                      alt={products.brand}
+                      src={product.brandImage} 
+                      alt={product.brand}
                       className="h-8 w-8 object-contain"
                     />
-                    <span className="text-gray-600">Brand:</span>
-                    <span className="font-medium">{products.brand}</span>
+                    
                   </div>
-                  <p className="text-gray-600">{products.description}</p>
+                  <div className="flex items-center gap-4 ">
+                  <span className="text-gray-600">Share item:</span>
+                  <div className="flex">
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center ml-[15px]">
+                            <img src="/src/components/images/fb.png"></img>
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <img src="/src/components/images/github.png"></img>
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <img src="/src/components/images/psocial.png"></img>
+                        </a>
+                        <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
+                        <img src="/src/components/images/insta.png"></img>
+                        </a>
+                    </div>
+                    </div>
                 </div>
+                <div>
+                  <p className="text-gray-600">{product.description}</p>
+                </div>
+                
 
                 <div className="flex items-center gap-4">
                   <div className="flex items-center border rounded">
@@ -145,29 +173,17 @@ return (
                   </button>
                 </div>
 
-                <div className="flex items-center gap-4 pt-4 border-t">
-                  <span className="text-gray-600">Share item:</span>
-                  {['Facebook', 'Twitter', 'Pinterest', 'Instagram'].map((social) => (
-                    <button 
-                      key={social}
-                      className="text-gray-400 hover:text-gray-600"
-                    >
-                      {/* Simple letter icons - replace with proper social icons if needed */}
-                      {social[0]}
-                    </button>
-                  ))}
-                </div>
-
+                
                 <div className="space-y-1">
                   <div className="flex items-center gap-2">
-                    <span className="text-gray-600">Category:</span>
-                    <span>{products.category}</span>
+                    <span className="text-gray-900 text-sm font-bold">Category:</span>
+                    <span className="text-sm text-gray-500">{product.category}</span>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <span className="text-gray-600">Tags:</span>
-                    <div className="flex gap-2">
-                      {products.tags?.map((tag) => (
-                        <span key={tag} className="text-gray-600">
+                  <div className="flex justify-normal items-center gap-2">
+                    <span className="text-gray-900 text-sm font-bold">Tag:</span>
+                    <div className="flex items-center gap-2">
+                      {product.tags?.map((tag) => (
+                        <span key={tag} className="text-gray-500">
                           {tag}
                         </span>
                       ))}
@@ -177,6 +193,7 @@ return (
               </div>
             </div>
           </div>
+    </div>
     </div>
 
     </>
