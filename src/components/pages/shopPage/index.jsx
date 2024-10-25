@@ -4,7 +4,7 @@ import { Filters } from "./Filters";
 import { products } from "../../../constants";
 import ProductCard  from "./../homepage/./sections/Productcard"
 import { useState } from "react";
-import { QuickViewModal } from "../ProductQuickModal";
+import { QuickViewModal } from "./ProductQuickModal";
  
 
 export function ShopPage () {
