@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+
 const ProductCard = ({ product }) => {
     return (
         <div key={product.id} className="border p-4 rounded shadow-md relative flex flex-col hover:border-green-500 transition duration-300">

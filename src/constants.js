@@ -89,5 +89,18 @@ export const products = [
     price: 34.00,
     image: "/src/components/images/popularproduct.png",
     rating: 4
+   },
+   {id: 15,
+    name: "Badami Mango",
+    price: 34.00,
+    image: "/src/components/images/popularproduct.png",
+    rating: 4
+   },
+   {id: 16,
+    name: "Mango",
+    price: 34.00,
+    image: "/src/components/images/popularproduct.png",
+    rating: 4
    }
+   
 ];

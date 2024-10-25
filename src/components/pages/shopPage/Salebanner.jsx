@@ -26,6 +26,8 @@ export function SaleBanner()  {
           <h2 className="text-4xl font-semibold text-white mb-4">
             Sale of the Month
           </h2>
+{/* div off */}
+          <div className="rounded-full bg-[#FF8A00] w-[65px] h-[65px] text-center flex items-center p-3 absolute top-[38px] left-[400px]"><span className="text-white font-bold">56% off</span></div>
 
           {/* Timer */}
           <div className="text-[#00B207] flex space-x-2 font-poppins text-xl mb-5">
@@ -42,7 +44,7 @@ export function SaleBanner()  {
           </button>
         </div>
       </div>
-      <div className="rounded-full bg-[#FF8A00] w-[65px] h-[65px] text-center flex items-center p-3 absolute top-[250px] left-[600px]"><span className="text-white font-bold">56% off</span></div>
+     
     </div>
     </>
     )
