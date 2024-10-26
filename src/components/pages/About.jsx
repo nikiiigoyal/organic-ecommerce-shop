@@ -1,4 +1,4 @@
-import TeamSection from "./TeamMembers";
+import TeamSection from "../TeamMembers";
 
 export function About () {
     return (

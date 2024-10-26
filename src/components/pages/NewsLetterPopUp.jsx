@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 export const SimplePopup = () => {
-    const [isOpen, setIsOpen] = useState(false); // Start with false
+    const [isOpen, setIsOpen] = useState(true); // Start with false
     const [email, setEmail] = useState('')
 
     useEffect(() => {
@@ -50,11 +50,11 @@ export const SimplePopup = () => {
                                 setIsOpen(false);
                                 localStorage.setItem('homePopupSeen', 'true');
                             }} 
-                            className="absolute top-4 right-4"
+                            className="absolute top-6 right-6 bg-black"
                         >
                             <img src="src/components/images/closeicon.svg" alt="Close" />
                         </button>
-
+ 
                         <h1 className="text-3xl font-bold">Subscribe to our Newsletter</h1>
                         
                         <p className="text-[#999999] text-sm">

@@ -24,7 +24,11 @@ export const products = [
   brandImage: '/src/components/images/brandimg.png',
   description: 'Class aptent taciti sociosqu ad litora torquent per conubia nostra...',
   category: 'Vegetables',
-  tags: ['Vegetables', 'Healthy', 'Chinese', 'Cabbage', 'Green Cabbage']
+  tags: ['Vegetables', 'Healthy', 'Chinese', 'Cabbage', 'Green Cabbage'],
+  weight: '03',
+  color: 'green',
+  type:'organic',
+  stockStatus: 'Available'
 },
 {id: 4,
     name: "Green Lettuce",

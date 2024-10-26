@@ -9,13 +9,13 @@ const ProductCard = ({ product,onQuickView }) => {
                 {/* Heart and eye icons */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex flex-col justify-around pt-5">
                     <img src="/src/components/images/Heart.png" alt="favorite" className="w-6 h-6" />
-                    <img src="/src/components/images/eye.png" alt="view" className="w-6 h-6" />
+                    
 
                     <button 
                         onClick={() => onQuickView(product)} 
-                        className="bg-green-500 text-white px-2 py-1 rounded text-xs hover:bg-green-600 transition duration-200"
+                        className="text-white py-2 rounded hover:scale-150 transition duration-200"
                     >
-                        Quick View
+                        <img src="/src/components/images/eye.png" alt="view" className="w-6 h-6" />
                     </button>
                 </div>
             </div>
