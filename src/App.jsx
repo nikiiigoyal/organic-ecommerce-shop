@@ -11,6 +11,7 @@ import { Layout } from "./components/layout/layout";
 import { ShopPage } from "./components/pages/shopPage";
 import { About } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
+import { ProductDetails } from "./components/pages/productDetailsPage";
 
 // import Homepage from "./components/pages/homepage/sections";
 
@@ -25,6 +26,7 @@ return (
       <Route path="/" element={<Layout />}>
    <Route index element={<Homepage />}></Route>
    <Route path="/shop" element={<ShopPage />}></Route>
+   <Route path="/pages" element={<ProductDetails />}></Route>
    <Route path="/signin" element={<SignInForm />}></Route>
    <Route path="/about" element={<About />}></Route>
    <Route path="/contact" element={<Contact />}></Route>
