@@ -1,9 +1,13 @@
+
+
+import { QuickViewModal } from "../shopPage/ProductQuickModal";
 import { RightSideImage } from "./RightSide";
 
 export const DescriptionsTab = () => {
     return (
-        
-      <div className="py-6 mx-auto w-[80%] flex flex-row">
+      <>
+       <QuickViewModal />
+        <div className="py-6 mx-auto w-[80%] flex flex-row">
         <div className="space-y-4 flex flex-col">
           <p className="text-gray-600">
             Sed commodo aliquam dui ac porta. Fusce ipsum felis, imperdiet at posuere ac, viverra at
@@ -37,5 +41,6 @@ export const DescriptionsTab = () => {
           <RightSideImage />
         </div>
       </div>
+      </>
     );
   };
