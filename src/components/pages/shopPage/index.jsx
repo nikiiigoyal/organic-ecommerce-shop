@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { SaleBanner } from "./Salebanner";
 import { Filters } from "./Filters";
 import { products } from "../../../constants";
-import ProductCard  from "./../homepage/./sections/Productcard"
+import ProductCard from "../homepage/sections/ProductCard";
 import { useState } from "react";
-import { QuickViewModal } from "./ProductQuickModal";
+import { QuickViewModal } from "../shared/ProductQuickModal";
  
 
 export function ShopPage () {
