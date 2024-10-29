@@ -23,7 +23,7 @@ return (
     <Routes>
       {/* public routes */}
       
-      <Route path="/" element={<Layout />}>
+   <Route path="/" element={<Layout />}>
    <Route index element={<Homepage />}></Route>
    <Route path="/shop" element={<ShopPage />}></Route>
    <Route path="/pages" element={<ProductDetails />}></Route>
