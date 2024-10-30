@@ -1,23 +1,14 @@
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
 import { SaleBanner } from "./Salebanner";
 import { Filters } from "./Filters";
 import { products } from "../../../constants";
 import ProductCard from "../homepage/sections/ProductCard";
-import { useState } from "react";
-import { QuickViewModal } from "./ProductQuickModal";
+
  
 
-export function ShopPage () {
-    const [selectedProduct, setSelectedProduct] = useState(null);
-    const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
-
+export function ShopPage ({onQuickView}) {
     
-    const handleQuickView = (product) => {
-        console.log("Quick View clicked for:", product); 
-        setSelectedProduct(product)
-        setIsQuickViewOpen(true)
-        console.log("Modal open status:", isQuickViewOpen);
-    }
     return (
         <>
         <div className="container mx-auto px-4 py-2">
@@ -34,18 +25,18 @@ export function ShopPage () {
           {products.map(product => (
             <ProductCard key={product.id} 
             product={product} 
-            onQuickView={handleQuickView}
+            onQuickView={onQuickView}
             />
           ))}
         </div>
         </div>
-        {isQuickViewOpen && (
+        {/* {isQuickViewOpen && (
     <QuickViewModal 
         product={selectedProduct}
         isOpen={isQuickViewOpen}
         onClose={() => setIsQuickViewOpen(false)} 
     />
-)}
+)} */}
         </>
     )
 }

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-const ProductCard = ({ product,onQuickView }) => {
+const ProductCard = ({ product, onQuickView }) => {
     return (
         <div key={product.id} className="border p-4 rounded shadow-md relative flex flex-col hover:border-green-500 transition duration-300">
             <div className="relative group">

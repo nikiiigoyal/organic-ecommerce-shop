@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import BannerAndFeatures from "./Banner";
 import PopularCategories from "./PopularCategories";
 import { products } from "../../../../constants";
@@ -11,7 +12,7 @@ import DiscountBanner from "./DiscountBanner";
 import ProductsView from "./ProductsView";
 import { SimplePopup } from "../../NewsLetterPopUp";
 
-export default function Homepage () {
+export default function Homepage ({onQuickView}) {
     return (
         <div>
             
@@ -19,11 +20,11 @@ export default function Homepage () {
             <SimplePopup />
             <BannerAndFeatures />
             <PopularCategories />
-            <ProductsView products={products.slice(0,10)} heading="Popular Products"/>
+            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}/>
             <SaleImages />
            <DiscountBanner />
             <HotDeals />
-            <ProductsView products={products.slice(0,10)} heading="Popular Products"/>
+            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}/>
            <LatestNews />
            <TestimonialCard />
            <Follow />
