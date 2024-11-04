@@ -6,7 +6,8 @@ import { SignInForm } from "./components/pages/SignInform";
 import { CreateForm } from "./components/pages/CreateAccount";
 import { ErrorPage } from "./components/pages/ErrorPage";
 import Homepage from "./components/pages/homepage/sections";
-import { Layout } from "./components/layout/layout";
+import { Layout } from "./components/layout/Layout.jsx";
+
 import { ShopPage } from "./components/pages/shopPage";
 import { About } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
