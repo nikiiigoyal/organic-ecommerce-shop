@@ -10,11 +10,11 @@ export function About () {
                 <p className="text-sm text-gray-600">Morbi porttitor ligula in nunc varius sagittis. Proin dui nisi, laoreet ut tempor ac, cursus vitae eros. Cras quis ultricies elit. Proin ac lectus arcu. Maecenas aliquet vel tellus at accumsan. Donec a eros non massa vulputate ornare. Vivamus ornare commodo ante, at commodo felis congue vitae.
                 </p>
             </div>
-            <img src="/src/components/images/faqimg.png" className="w-[400px]"></img>
+            <img src="/images/faqimg.png" className="w-[400px]"></img>
             </div>
 {/* second */}
             <div className="flex flex-row w-[80%]mx-auto justify-start">
-            <img src="/src/components/images/about.png" className="w-[50%]"></img>
+            <img src="/images/about.png" className="w-[50%]"></img>
                 <div className="flex flex-col justify-center w-[40%]">
                 <h1 className="text-3xl font-bold mb-5">100% Trusted Organic Food Store</h1>
                 <p className="text-sm text-gray-600 mb-5">Pellentesque a ante vulputate leo porttitor luctus sed eget eros. Nulla et rhoncus neque. Duis non diam eget est luctus tincidunt a a mi. Nulla eu eros consequat tortor tincidunt feugiat.
@@ -22,7 +22,7 @@ export function About () {
                 <div className="flex flex-row items-center">
                     <div className="left flex flex-col">
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">100% Organic food</h3>
                         <p className="text-gray-500 text-sm p-1">100% healthy & Fresh food.</p>
@@ -30,7 +30,7 @@ export function About () {
                   </div>
 
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">Customer Feedback</h3>
                         <p className="text-gray-500 text-sm p-1">Our happy customer</p>
@@ -38,7 +38,7 @@ export function About () {
                   </div>
 
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">Free Shipping</h3>
                         <p className="text-gray-500 text-sm p-1">Free shipping with discount.</p>
@@ -49,7 +49,7 @@ export function About () {
 
                    <div className="right flex flex-col">
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">Great Support 24/7</h3>
                         <p className="text-gray-500 text-sm p-1">Instant access to Contact.</p>
@@ -57,7 +57,7 @@ export function About () {
                   </div>
 
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">100% Sucure Payment</h3>
                         <p className="text-gray-500 text-sm p-1">We ensure your money is save</p>
@@ -65,7 +65,7 @@ export function About () {
                   </div>
 
                   <div className="flex flex-row">
-                    <img src="/src/components/images/leaf.png"></img>
+                    <img src="/images/leaf.png"></img>
                     <div>
                         <h3 className="text-black text-sm font-bold p-1">100% Organic Food</h3>
                         <p className="text-gray-500 text-sm p-1">100% healthy & Fresh food..</p>
@@ -98,10 +98,10 @@ export function About () {
                     </label>
                 </div>
                 <button className="bg-[#00B207] text-white  py-2 px-4 mt-4 w-[162px] h-[45px] rounded-full hover:bg-green-600 transition">
-          Shop Now <img src="/src/components/images/arrow.svg" alt="arrow" className="inline"/>
+          Shop Now <img src="/images/arrow.svg" alt="arrow" className="inline"/>
         </button>
             </div>
-            <img src="/src/components/images/faqimg.png" className="w-[400px]"></img>
+            <img src="/images/faqimg.png" className="w-[400px]"></img>
             </div>
         </div>
         <div className="w-[80%] mx-auto">

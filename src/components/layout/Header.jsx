@@ -6,7 +6,7 @@ const Header = () => {
         <div className="top-bar bg-[#f5f5f5] px-4 py-2">
             <div className='flex justify-between items-center w-[70%] mx-auto'>
             <div className='flex items-center text-sm text-gray-600'>
-            <img src="/src/components/images/MapPin.jpg" className='mr-2'></img>
+            <img src="/images/MapPin.jpg" className='mr-2'></img>
           <span>Store Location: Lincoln- 344, Illinois, Chicago, USA</span>
           </div>
           <div className="top-right flex items-center space-x-4 pt text-sm">
@@ -27,7 +27,7 @@ const Header = () => {
         <div className="main-header flex justify-between items-center p-4  w-[70%] mx-auto">
           <div className="logo items-center flex">
             <Link to="/" className='flex items-center flex-row'>
-              <img src="/src/components/images/headerLogo.jpg" alt="Ecobazar"className='h-[20px] mr-2' />
+              <img src="/images/headerLogo.jpg" alt="Ecobazar"className='h-[20px] mr-2' />
               <span className="text-black font-semibold text-[32px]">Ecobazar</span>
             </Link>
           </div>
@@ -38,7 +38,7 @@ const Header = () => {
           </div>
           </div>
           <div className="cart flex items-center space-x-6">
-            <img src="/src/components/images/Heart.png"></img>
+            <img src="/images/Heart.png"></img>
             <div className='relative'>
             <Link to="/cart">
               <span className="cart-icon">🛒</span>
@@ -60,7 +60,7 @@ const Header = () => {
               <li><Link to="/contact" className="py-3 px-2 inline-block">Contact Us</Link></li>
           </ul>
           <div className="phone text-white flex items-center gap-[8px]">
-            <img src="/src/components/images/phone.png"></img>
+            <img src="/images/phone.png"></img>
             <span>(219) 555-0114</span>
           </div>
           

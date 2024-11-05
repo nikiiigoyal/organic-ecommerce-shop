@@ -4,7 +4,7 @@ const BannerAndFeatures = () => {
     return (
         <div className="w-full">
             <img 
-                src="/src/components/images/Bannar (2).png" 
+                src="/images/Bannar (2).png" 
                 className="w-[80%] h-[600px] pt-4 pb-6 mx-auto" 
                 alt="Banner"
             />
@@ -12,7 +12,7 @@ const BannerAndFeatures = () => {
                 <div className="feature flex">
                     <div>
                         <img 
-                            src="/src/components/images/delivery-truck 1.png" 
+                            src="/images/delivery-truck 1.png" 
                             className='pr-[10px]'
                             alt="Delivery truck"
                         />
@@ -25,7 +25,7 @@ const BannerAndFeatures = () => {
                 <div className="feature flex">
                     <div>
                         <img 
-                            src="/src/components/images/headphones.png" 
+                            src="/images/headphones.png" 
                             className='pr-[10px]'
                             alt="Headphones"
                         />
@@ -38,7 +38,7 @@ const BannerAndFeatures = () => {
                 <div className="feature flex">
                     <div>
                         <img 
-                            src="/src/components/images/shoppingBag.png" 
+                            src="/images/shoppingBag.png" 
                            className='pr-[10px]'
                             alt="Shopping bag"
                         />
@@ -51,7 +51,7 @@ const BannerAndFeatures = () => {
                 <div className="feature flex">
                     <div>
                         <img 
-                            src="/src/components/images/moneyback.png" 
+                            src="/images/moneyback.png" 
                             className='pr-[10px]'
                             alt="Money back guarantee"
                         />

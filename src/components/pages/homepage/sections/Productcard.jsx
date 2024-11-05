@@ -8,14 +8,14 @@ const ProductCard = ({ product, onQuickView }) => {
 
                 {/* Heart and eye icons */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex flex-col justify-around pt-5">
-                    <img src="/src/components/images/Heart.png" alt="favorite" className="w-6 h-6" />
+                    <img src="/images/Heart.png" alt="favorite" className="w-6 h-6" />
                     
 
                     <button 
                         onClick={() => onQuickView(product)} 
                         className="text-white py-2 rounded hover:scale-150 transition duration-200"
                     >
-                        <img src="/src/components/images/eye.png" alt="view" className="w-6 h-6" />
+                        <img src="/images/eye.png" alt="view" className="w-6 h-6" />
                     </button>
                 </div>
             </div>
@@ -38,7 +38,7 @@ const ProductCard = ({ product, onQuickView }) => {
                 </div>
                 
                 <div className="relative group-hover:bg-green-500 p-1 rounded-full transition-all duration-300">
-                    <img src="/src/components/images/addToCart.png" alt="add to cart" className="w-8 h-8 group-hover:opacity-90" />
+                    <img src="/images/addToCart.png" alt="add to cart" className="w-8 h-8 group-hover:opacity-90" />
                 </div>
             </div>
         </div>

@@ -5,7 +5,15 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': '/src',
+      '@': '/src'
+    }
+  },
+  build: {
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
     }
   }
 })

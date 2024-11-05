@@ -16,7 +16,7 @@ return (
      </div>
     </div>
     <div className="right">
-        <img src="/src/components/images/faqimg.png" alt="image"className="h-[80%]"></img>
+        <img src="/images/faqimg.png" alt="image"className="h-[80%]"></img>
     </div>
  </div>
  </>

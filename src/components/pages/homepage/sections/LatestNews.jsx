@@ -1,7 +1,7 @@
 const LatestNews = () => {
     const news =  [
     {
-      image: "/src/components/images/news.png",
+      image: "/images/news.png",
       date: "18",
       month: "Nov",
       category: "Food",
@@ -11,7 +11,7 @@ const LatestNews = () => {
       link: "#"
 },
 {
-    image: "/src/components/images/news.png",
+    image: "/images/news.png",
     date: "29",
     month: "Nov",
     category: "Food",
@@ -21,7 +21,7 @@ const LatestNews = () => {
     link: "#"
 },
 {
-    image: "/src/components/images/news.png",
+    image: "/images/news.png",
     date: "21",
     month: "Nov",
     category: "Food",
@@ -52,7 +52,7 @@ return (
                             <h3 className="text-lg font-semibold mb-2 text-[#2C742F]">{item.title}</h3>
                             <a href={item.link} className="text-[#00B207] flex items-center hover:underline">
                                 Read More 
-                                <img src="/src/components/images/arrow.svg" alt="arrow" className="ml-1 w-4 h-4" />
+                                <img src="/images/arrow.svg" alt="arrow" className="ml-1 w-4 h-4" />
                             </a>
                         </div>
                     </div>

@@ -36,7 +36,7 @@ export const SimplePopup = () => {
                     {/* Image section */}
                     <div className="md:w-1/2">
                         <img 
-                            src="/src/components/images/popup.png" 
+                            src="/images/popup.png" 
                             alt="Newsletter popup"
                             className="w-full h-auto"
                         />

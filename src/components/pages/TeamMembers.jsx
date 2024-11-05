@@ -28,27 +28,27 @@ const TeamMember = ({ image, name, role, socialLinks }) => (
 const TeamSection =  () => {
 const teamMembers = [
         {
-            image: "/src/components/images/teamImg.png",
+            image: "/images/teamImg.png",
             name: "Jenny Wilson",
             role: "Ceo & Founder",
             socialLinks: [
-              { name: "Twitter", icon: "/src/components/images/insta.png", url: "#" },
-              { name: "Pinterest", icon: "/src/components/images/insta.png", url: "#" },
-              { name: "Instagram", icon: "/src/components/images/insta.png", url: "#" },
+              { name: "Twitter", icon: "/images/insta.png", url: "#" },
+              { name: "Pinterest", icon: "/images/insta.png", url: "#" },
+              { name: "Instagram", icon: "/images/insta.png", url: "#" },
             ],
         },
         {
-            image: "/src/components/images/teamImg.png",
+            image: "/images/teamImg.png",
             name: "Jane Cooper",
             role: "Worker",
         },
         {
-            image: "/src/components/images/teamImg.png",
+            image: "/images/teamImg.png",
             name: "Cody Fisher",
             role: "Security Guard",
         },
         {
-            image: "/src/components/images/teamImg.png",
+            image: "/images/teamImg.png",
             name: "Robert Fox",
             role: "Senior Farmer Manager",
         },

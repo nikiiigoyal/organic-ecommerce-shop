@@ -10,7 +10,7 @@ const ProductsView = ({ products, heading, onQuickView }) => {
           <h2 className="text-2xl font-bold">{heading}</h2>
           <a href="/categories" className="text-green-500 hover:text-green-600 flex items-center">
             View All
-            <img src="/src/components/images/arrow.svg" className="pl-1" />
+            <img src="/images/arrow.svg" className="pl-1" />
           </a>
         </div>
         <div className="grid grid-cols-5 gap-4">

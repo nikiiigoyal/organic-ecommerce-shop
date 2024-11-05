@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 // import { Layout } from "./components/layout/layout";
-import { Faq } from "./components/pages/Faq's";
+import { Faq } from "./components/pages/Faqs";
 import { SignInForm } from "./components/pages/SignInform";
 import { CreateForm } from "./components/pages/CreateAccount";
 import { ErrorPage } from "./components/pages/ErrorPage";

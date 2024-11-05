@@ -5,21 +5,21 @@ const testimonials = [
     text: "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
     name: "Robert Fox",
     role: "Customer",
-    avatar: "/src/components/images/avatar.png"
+    avatar: "/images/avatar.png"
   },
   {
     id: 2,
     text: "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
     name: "Dianne Russell",
     role: "Customer",
-    avatar: "/src/components/images/avatar.png"
+    avatar: "/images/avatar.png"
   },
   {
     id: 3,
     text: "Pellentesque eu nibh eget mauris congue mattis mattis nec tellus. Phasellus imperdiet elit eu magna dictum, bibendum cursus velit sodales. Donec sed neque eget",
     name: "Eleanor Pena",
     role: "Customer",
-    avatar: "/src/components/images/avatar.png"
+    avatar: "/images/avatar.png"
   }
 ]
 return (
@@ -28,12 +28,12 @@ return (
     <h2 className="text-black text-xl font-bold  mb-8">
         Client testimonials
     </h2>
-    <img src="/src/components/images/bothArrow.png"className="h-[40px]"></img>
+    <img src="/images/bothArrow.png"className="h-[40px]"></img>
     </div>
     <div className="flex space-x-6 overflow-x-auto rounded-md pb-4">
     {testimonials.map((testimonial) => (
           <div key={testimonial.id} className="bg-white rounded-lg shadow-md p-6 flex flex-col min-w-[300px] max-w-[400px]">
-            <div className="mb-5"><img src="/src/components/images/comma.png" className=""></img></div>
+            <div className="mb-5"><img src="/images/comma.png" className=""></img></div>
             <p className="text-gray-600 mb-6 flex-grow">{testimonial.text}</p>
             <div className="flex items-center">
               <img src={testimonial.avatar} alt={testimonial.name} className="w-10 h-10 rounded-full mr-4" />

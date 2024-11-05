@@ -9,7 +9,7 @@ const DiscountBanner  = () => {
         
         {/* Button */}
         <button className="bg-[#00B207] text-white  py-2 px-4  w-[162px] h-[45px] rounded-full flex items-center justify-center space-x-2 hover:bg-[#00960a] transition-colors duration-300">
-          Shop Now <img src="/src/components/images/arrow.svg" alt="arrow" className="inline items-center text-white"/>
+          Shop Now <img src="/images/arrow.svg" alt="arrow" className="inline items-center text-white"/>
         </button>
       </div>
       </div>

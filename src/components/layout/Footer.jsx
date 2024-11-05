@@ -41,16 +41,16 @@ const Footer = () => {
                     </div>
                     <div className="flex">
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center ml-[15px]">
-                            <img src="/src/components/images/fb.png"></img>
+                            <img src="/images/fb.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/github.png"></img>
+                        <img src="/images/github.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/psocial.png"></img>
+                        <img src="/images/psocial.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/insta.png"></img>
+                        <img src="/images/insta.png"></img>
                         </a>
                     </div>
                 </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <div className="container mx-auto grid grid-cols-5 gap-6">
                     <div className="col-span-1 ml-16">
                         <Link to="/" className="flex items-center mb-4">
-                            <img src="/src/components/images/footerlogo.png" alt="Ecobazar" className="h-8 mr-2" />
+                            <img src="/images/footerlogo.png" alt="Ecobazar" className="h-8 mr-2" />
                             <span className="text-white font-bold text-2xl">Ecobazar</span>
                         </Link>
                         <p className="text-gray-500 mb-4 text-sm">Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis dui, eget bibendum magna congue nec.</p>
@@ -85,11 +85,11 @@ const Footer = () => {
                 <div className="container flex justify-around items-center">
                     <p className="text-sm text-gray-400">Ecobazar eCommerce © 2021. All Rights Reserved</p>
                     <div className="flex space-x-3">
-                        <img src="/src/components/images/Method=ApplePay.png" alt="Apple Pay" className="h-8" />
-                        <img src="/src/components/images/Method=Visa.png" alt="Visa" className="h-8" />
-                        <img src="/src/components/images/Method=Discover.png" alt="Discover" className="h-8" />
-                        <img src="/src/components/images/Method=Mastercard.png" alt="Mastercard" className="h-8" />
-                        <img src="/src/components/images/securepay.png" alt="Secure Payment" className="h-8" />
+                        <img src="/images/Method=ApplePay.png" alt="Apple Pay" className="h-8" />
+                        <img src="/images/Method=Visa.png" alt="Visa" className="h-8" />
+                        <img src="/images/Method=Discover.png" alt="Discover" className="h-8" />
+                        <img src="/images/Method=Mastercard.png" alt="Mastercard" className="h-8" />
+                        <img src="/images/securepay.png" alt="Secure Payment" className="h-8" />
                     </div>
                 </div>
             </div>

@@ -45,7 +45,7 @@ return (
 <div className="flex min-h-full items-center justify-center p-">
     <div className="relative bg-white w-full max-w-[90%] rounded-lg">
    {/* close button */}
-   <button className="absolute right-4 top-[-32px] hover:bg-gray-100 bg-black rounded-full z-10" onClick={onClose}><img src="/src/components/images/closeicon.svg"></img></button>
+   <button className="absolute right-4 top-[-32px] hover:bg-gray-100 bg-black rounded-full z-10" onClick={onClose}><img src="/images/closeicon.svg"></img></button>
 
    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
     {/* left side image gallry */}
@@ -123,16 +123,16 @@ return (
                   <span className="text-gray-600">Share item:</span>
                   <div className="flex">
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center ml-[15px]">
-                            <img src="/src/components/images/fb.png"></img>
+                            <img src="/images/fb.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/github.png"></img>
+                        <img src="/images/github.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/psocial.png"></img>
+                        <img src="/images/psocial.png"></img>
                         </a>
                         <a href="#" className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <img src="/src/components/images/insta.png"></img>
+                        <img src="/images/insta.png"></img>
                         </a>
                     </div>
                     </div>

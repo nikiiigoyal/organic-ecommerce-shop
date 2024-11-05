@@ -10,7 +10,7 @@ const HotDeals = () => {
    <h2 className="text-2xl font-bold">Hot Deals</h2>
    <a href="/categories" className="text-green-500 hover:text-green-600 flex items-center">
           View All
-          <img src="/src/components/images/arrow.svg" className="pl-1"></img>
+          <img src="/images/arrow.svg" className="pl-1"></img>
         </a>
        </div>
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
@@ -26,11 +26,11 @@ const HotDeals = () => {
             </div>
             {/* button */}
             <div className="mt-4 flex justify-around">
-            <img src="/src/components/images/Heart.png"className=""></img>
+            <img src="/images/Heart.png"className=""></img>
                 <button className="bg-[#00B207] text-white py-2 w-[60%] rounded-full flex items-center justify-center">
-                  Add to Cart <img src="/src/components/images/addToCart.png" className="pl-6"></img>
+                  Add to Cart <img src="/images/addToCart.png" className="pl-6"></img>
           </button>
-          <img src="/src/components/images/eye.png"></img>
+          <img src="/images/eye.png"></img>
               </div>
               {/*name  */}
             <div className="mt-4 flex flex-col items-center">
@@ -71,8 +71,8 @@ const HotDeals = () => {
 
              {/* heart and eye icons */}
              <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex flex-col justify-around pt-5 ">
-                     <img src="/src/components/images/Heart.png" alt="favorite" className="w-6 h-6" />
-                     <img src="/src/components/images/eye.png" alt="favorite" className="w-6 h-6" />
+                     <img src="/images/Heart.png" alt="favorite" className="w-6 h-6" />
+                     <img src="/images/eye.png" alt="favorite" className="w-6 h-6" />
                  </div>
              </div>
 
@@ -93,7 +93,7 @@ const HotDeals = () => {
                  </div>
                  </div>
                  <div className="relative group-hover:bg-green-500 p-1 rounded-full transition-all duration-300">
-                     <img src="/src/components/images/addToCart.png" alt="add to cart"className="w-8 h-8 group-hover:opacity-90" />
+                     <img src="/images/addToCart.png" alt="add to cart"className="w-8 h-8 group-hover:opacity-90" />
                  </div>
              </div>
          </div>

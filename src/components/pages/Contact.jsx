@@ -5,15 +5,15 @@ export function Contact () {
             <div className="top flex flex-row w-[90%] mx-auto justify-around mt-5 ">
             <div className="left w-[30%] flex flex-col shadow-[0px,0px,56px,0px,#00260314] bg-white rounded-lg">
   <div className="flex flex-col items-center py-4">
-    <img src="/src/components/images/Address.png" alt="Map Pin" className="" />
+    <img src="/images/Address.png" alt="Map Pin" className="" />
     {/* <p className="text-sm text-gray-800 mt-2 text-center">2715 Ash Dr. San Jose, South Dakota 83475</p> */}
   </div>
   <div className="flex flex-col items-center py-4">
-    <img src="/src/components/images/Email.png" className="w-7 h-7" alt="email" />
+    <img src="/images/Email.png" className="w-7 h-7" alt="email" />
     <p className="text-sm text-gray-500 mt-2 font-semibold">Proxy@gmail.com<br />Help.proxy@gmail.com</p>
   </div>
   <div className="flex flex-col items-center py-4">
-    <img src="/src/components/images/phoneCall.png" className="w-8 h-8" alt="phone" />
+    <img src="/images/phoneCall.png" className="w-8 h-8" alt="phone" />
     <p className="text-sm text-gray-500 font-semibold mt-2">(219) 555-0114<br />(164) 333-0487</p>
   </div>
 </div>
@@ -34,7 +34,7 @@ export function Contact () {
                 </div>
             </div>
             <div className="bottom my-8">
-                <img src="/src/components/images/Map image.png"className="w-full"></img>
+                <img src="/images/Map image.png"className="w-full"></img>
             </div>
         </div>
         </>
