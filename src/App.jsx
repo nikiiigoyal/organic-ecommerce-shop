@@ -13,6 +13,7 @@ import { About } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
 import { ProductDetails } from "./components/pages/productDetailsPage";
 import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
+import { Products } from "./Products";
 
 // import Homepage from "./components/pages/homepage/sections";
 
@@ -43,6 +44,7 @@ return (
    <Route path="/contact" element={<Contact />}></Route>
    <Route path="/register" element={<CreateForm />}></Route>
    <Route path="/faq" element= {<Faq />}></Route>
+   <Route path="/products" element= {<Products />}></Route>
    <Route path="*" element= {<ErrorPage />}></Route>
    </Route>
   </Routes>
