@@ -52,7 +52,7 @@ export const SimplePopup = () => {
                             }} 
                             className="absolute top-6 right-6 bg-black"
                         >
-                            <img src="src/components/images/closeicon.svg" alt="Close" />
+                            <img src="images/closeicon.svg" alt="Close" />
                         </button>
  
                         <h1 className="text-3xl font-bold">Subscribe to our Newsletter</h1>
