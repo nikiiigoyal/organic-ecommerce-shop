@@ -12,7 +12,7 @@ import DiscountBanner from "./DiscountBanner";
 import ProductsView from "./ProductsView";
 import { SimplePopup } from "../../NewsLetterPopUp";
 
-export default function Homepage ({onQuickView}) {
+export default function Homepage ({onQuickView,addToWishlist}) {
     return (
         <div>
             
@@ -20,11 +20,14 @@ export default function Homepage ({onQuickView}) {
             <SimplePopup />
             <BannerAndFeatures />
             <PopularCategories />
-            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}/>
+            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}
+             addToWishlist={addToWishlist}/>
             <SaleImages />
            <DiscountBanner />
             <HotDeals />
-            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}/>
+            <ProductsView products={products.slice(0,10)} heading="Popular Products" onQuickView={onQuickView}
+              addToWishlist={addToWishlist}
+             />
            <LatestNews />
            <TestimonialCard />
            <Follow />

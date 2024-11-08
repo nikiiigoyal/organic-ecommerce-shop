@@ -1,6 +1,10 @@
 /* eslint-disable react/prop-types */
 
-const ProductCard = ({ product, onQuickView }) => {
+const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
+    const handleAddToWishlist = () => {
+        addToWishlist(product)
+        console.log("clickeddd")
+    }
     return (
         <div key={product.id} className="border p-4 rounded shadow-md relative flex flex-col hover:border-green-500 transition duration-300">
             <div className="relative group">
@@ -8,8 +12,11 @@ const ProductCard = ({ product, onQuickView }) => {
 
                 {/* Heart and eye icons */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex flex-col justify-around pt-5">
-                    <img src="/images/Heart.png" alt="favorite" className="w-6 h-6" />
-                    
+                    <button  onClick={handleAddToWishlist}>
+                    <img src="/images/Heart.png" alt="favorite" className="w-6 h-6"
+                   
+                     />
+                    </button>
 
                     <button 
                         onClick={() => onQuickView(product)} 

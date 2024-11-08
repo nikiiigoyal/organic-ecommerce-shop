@@ -14,10 +14,20 @@ import { Contact } from "./components/pages/Contact";
 // import { ProductDetails } from "./components/pages/productDetailsPage";
 import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
 import { Products } from "./Products";
+import { Wishlist } from "./components/pages/Wishlist";
+
 
 // import Homepage from "./components/pages/homepage/sections";
 
 function App() {
+  const [wishlist , setWishlist] = useState([])
+
+  const addToWishlist = (product) => {
+    setWishlist([...wishlist,product])
+  }
+  const removeFromWishlist = (product) => {
+    setWishlist(wishlist.filter((item) => item.id !== product.id))
+  }
   const [selectedProduct, setSelectedProduct] = useState(null);
     const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
 
@@ -36,9 +46,9 @@ return (
       {/* public routes */}
       
    <Route path="/" element={<Layout />}>
-   <Route index element={<Homepage onQuickView={handleQuickView}/>}></Route>
-   <Route path="/shop" element={<ShopPage onQuickView={handleQuickView}/>}></Route>
-   {/* <Route path="/pages" element={<ProductDetails />}></Route> */}
+   <Route index element={<Homepage onQuickView={handleQuickView} addToWishlist={addToWishlist}/>}></Route>
+   <Route path="/shop" element={<ShopPage onQuickView={handleQuickView} addToWishlist={addToWishlist}/>}></Route>
+   
    <Route path="/signin" element={<SignInForm />}></Route>
    <Route path="/about" element={<About />}></Route>
    <Route path="/contact" element={<Contact />}></Route>
@@ -46,6 +56,7 @@ return (
    <Route path="/faq" element= {<Faq />}></Route>
    <Route path="/products" element= {<Products />}></Route>
    <Route path="*" element= {<ErrorPage />}></Route>
+   <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route>
    </Route>
   </Routes>
    {isQuickViewOpen && (

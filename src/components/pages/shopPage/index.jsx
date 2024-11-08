@@ -7,7 +7,7 @@ import ProductCard from "../homepage/sections/ProductCard";
 
  
 
-export function ShopPage ({onQuickView}) {
+export function ShopPage ({onQuickView ,addToWishlist}) {
     
     return (
         <>
@@ -26,6 +26,9 @@ export function ShopPage ({onQuickView}) {
             <ProductCard key={product.id} 
             product={product} 
             onQuickView={onQuickView}
+            
+            addToWishlist={addToWishlist}
+           
             />
           ))}
         </div>
