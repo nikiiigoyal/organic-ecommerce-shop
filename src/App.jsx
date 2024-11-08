@@ -11,7 +11,7 @@ import { Layout } from "/src/components/layout/Layout.jsx";
 import { ShopPage } from "./components/pages/shopPage";
 import { About } from "./components/pages/About";
 import { Contact } from "./components/pages/Contact";
-import { ProductDetails } from "./components/pages/productDetailsPage";
+// import { ProductDetails } from "./components/pages/productDetailsPage";
 import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
 import { Products } from "./Products";
 
@@ -38,7 +38,7 @@ return (
    <Route path="/" element={<Layout />}>
    <Route index element={<Homepage onQuickView={handleQuickView}/>}></Route>
    <Route path="/shop" element={<ShopPage onQuickView={handleQuickView}/>}></Route>
-   <Route path="/pages" element={<ProductDetails />}></Route>
+   {/* <Route path="/pages" element={<ProductDetails />}></Route> */}
    <Route path="/signin" element={<SignInForm />}></Route>
    <Route path="/about" element={<About />}></Route>
    <Route path="/contact" element={<Contact />}></Route>
