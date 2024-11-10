@@ -26,7 +26,6 @@ export function ShopPage ({onQuickView ,addToWishlist}) {
             <ProductCard key={product.id} 
             product={product} 
             onQuickView={onQuickView}
-            
             addToWishlist={addToWishlist}
            
             />

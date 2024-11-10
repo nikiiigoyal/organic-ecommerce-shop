@@ -20,6 +20,8 @@ import { Wishlist } from "./components/pages/Wishlist";
 // import Homepage from "./components/pages/homepage/sections";
 
 function App() {
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
   const [wishlist , setWishlist] = useState([])
 
   const addToWishlist = (product) => {
@@ -28,11 +30,7 @@ function App() {
   const removeFromWishlist = (product) => {
     setWishlist(wishlist.filter((item) => item.id !== product.id))
   }
-  const [selectedProduct, setSelectedProduct] = useState(null);
-    const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
-
-    
-    const handleQuickView = (product) => {
+ const handleQuickView = (product) => {
         console.log("Quick View clicked for:", product); 
         setSelectedProduct(product)
         setIsQuickViewOpen(true)

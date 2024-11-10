@@ -12,7 +12,7 @@ import DiscountBanner from "./DiscountBanner";
 import ProductsView from "./ProductsView";
 import { SimplePopup } from "../../NewsLetterPopUp";
 
-export default function Homepage ({onQuickView,addToWishlist}) {
+export default function Homepage ({onQuickView, addToWishlist}) {
     return (
         <div>
             
