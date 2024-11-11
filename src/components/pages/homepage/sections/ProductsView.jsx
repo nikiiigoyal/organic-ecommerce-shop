@@ -2,7 +2,7 @@
 
 import ProductCard from './ProductCard';
 
-const ProductsView = ({ products, heading, onQuickView }) => {
+const ProductsView = ({ products, heading, onQuickView , addToWishlist}) => {
   return (
     <>
       <div className="container mx-auto p-4 w-[80%]">
@@ -15,7 +15,8 @@ const ProductsView = ({ products, heading, onQuickView }) => {
         </div>
         <div className="grid grid-cols-5 gap-4">
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} onQuickView={onQuickView} />
+            <ProductCard key={product.id} product={product} onQuickView={onQuickView}
+            addToWishlist={addToWishlist} />
           ))}
         </div>
       </div>

@@ -14,7 +14,8 @@ import { Contact } from "./components/pages/Contact";
 // import { ProductDetails } from "./components/pages/productDetailsPage";
 import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
 import { Products } from "./Products";
-import { Wishlist } from "./components/pages/Wishlist";
+import { Wishlist } from "./components/pages/wishlist/Wishlist";
+
 
 
 // import Homepage from "./components/pages/homepage/sections";
