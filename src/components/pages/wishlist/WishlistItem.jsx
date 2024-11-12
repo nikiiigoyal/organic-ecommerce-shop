@@ -19,7 +19,7 @@ const WishlistItem = ({product , onRemoveFromWishlist}) => {
           </td>
           <td className="p-4 text-right">
             <span className={`bg-${product.stockStatus === 'In Stock' ? 'green' : 'red'}-500 text-white py-1 px-2 rounded-lg`}>
-              {product.stockStatus}
+              {product.stockStatus === 'Available' ? 'in stock': 'out of stock'}
             </span>
           </td>
           <td className="p-4 text-right">
@@ -54,6 +54,8 @@ const WishlistItem = ({product , onRemoveFromWishlist}) => {
   </button>
  </div> */}
 </>
+
+
     )
 }
 export default WishlistItem
