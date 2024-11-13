@@ -15,6 +15,7 @@ import { Contact } from "./components/pages/Contact";
 import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
 import { Products } from "./Products";
 import { Wishlist } from "./components/pages/wishlist/Wishlist";
+import { BillingInfo } from "./components/pages/checkout/BillingInfo";
 
 
 
@@ -56,6 +57,7 @@ return (
    <Route path="/products" element= {<Products />}></Route>
    <Route path="*" element= {<ErrorPage />}></Route>
    <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route>
+   <Route path="/blog" element={<BillingInfo/>}></Route>
    </Route>
   </Routes>
    {isQuickViewOpen && (
