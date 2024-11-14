@@ -1,50 +1,102 @@
 export const BillingInfo = () => {
     return (
-    <>
-    <div className="flex flex-col font-poppins">
-        <h1 className="text-[#1A1A1A] text-[24px] mb-4 font-semibold">Billing Information</h1>
-        <div className="flex justify-around">
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm mb-2"> First name</h3>
-            <input className="px-4 py-3 text-sm text-[#999999] border border-gray-100 rounded-sm" placeholder="Your first name"></input>
-        </label>
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm "> Last name</h3>
-            <input className="p-4 text-sm text-[#999999] border border-gray-100 rounded-sm" placeholder="Your last name"></input>
-        </label>
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm"> Company name<span className="text-gray-500">(optional)</span></h3>
-            <input className="p-4 text-sm text-[#999999] border border-gray-100 rounded-sm" placeholder="Company name"></input>
-        </label>
+      <div className="flex flex-col justify-between font-poppins w-[80%]">
+        <h1 className="text-[#1A1A1A] text-[24px] mb-4 font-semibold">
+          Billing Information
+        </h1>
+        <div className="flex justify-between">
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">First name</h3>
+              <input
+                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Your first name"
+              ></input>
+            </label>
+          </div>
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">Last name</h3>
+              <input
+                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Your last name"
+              ></input>
+            </label>
+          </div>
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">
+                Company name<span className="text-[#999999]">(optional)</span>
+              </h3>
+              <input
+                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Company name"
+              ></input>
+            </label>
+          </div>
         </div>
-        <div className="flex justify-around">
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm mb-2"> Country / Region</h3>
-            <select className="px-10 py-3 text-sm text-[#999999] border border-gray-100 rounded-sm">
+        <div>
+          <label className="">
+            <h3 className="text-[#1A1A1A] text-[16px] mb-2">Street Address</h3>
+            <input
+              className="w-full px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+              placeholder="Email"
+            ></input>
+          </label>
+        </div>
+        <div className="flex justify-between">
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">Country / Region</h3>
+              <select className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm">
                 <option>Select</option>
                 <option>India</option>
                 <option>China</option>
                 <option>Japan</option>
-                </select>
-               
-        </label>
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm ">States</h3>
-            <select className="p-4 text-sm text-[#999999] border border-gray-100 rounded-sm">
+              </select>
+            </label>
+          </div>
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">States</h3>
+              <select className="px-6 py-4 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm text-center">
                 <option>Select</option>
                 <option>M.p</option>
                 <option>U.p</option>
                 <option>Bihar</option>
-                </select>
-        </label>
-        <label className="">
-            <h3 className="text-[#1A1A1A] text-sm">Zip code</h3>
-            <input className="p-4 text-sm text-[#999999] border border-gray-100 rounded-sm" placeholder="Zip code"></input>
-        </label>
+              </select>
+            </label>
+          </div>
+          <div className="w-[40%]">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">Zip code</h3>
+              <input
+                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Zip code"
+              ></input>
+            </label>
+          </div>
         </div>
-
-    </div>
-        
-    </>
-    )
-}
+        <div className="flex justify-between">
+          <div className="">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">Email</h3>
+              <input
+                className="px-5 py-3  text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Email Address"
+              ></input>
+            </label>
+          </div>
+          <div className="">
+            <label className="">
+              <h3 className="text-[#1A1A1A] text-[16px] mb-2">Phone</h3>
+              <input
+                className="px-5 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                placeholder="Phone number"
+              ></input>
+            </label>
+          </div>
+        </div>
+      </div>
+    );
+  };
