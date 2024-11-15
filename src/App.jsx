@@ -25,6 +25,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
   const [wishlist , setWishlist] = useState([])
+  // const [cartItems , setCartItems] = useState([])
 
   const addToWishlist = (product) => {
     setWishlist([...wishlist,product])
@@ -38,6 +39,9 @@ function App() {
         setIsQuickViewOpen(true)
         console.log("Modal open status:", isQuickViewOpen);
     }
+    // const addToCart = (product) => {
+    //   setCartItems
+    // }
 return (
   <BrowserRouter>
   
