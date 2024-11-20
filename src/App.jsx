@@ -16,6 +16,7 @@ import { QuickViewModal } from "./components/pages/shopPage/ProductQuickModal";
 import { Products } from "./Products";
 import { Wishlist } from "./components/pages/wishlist/Wishlist";
 import { BillingInfo } from "./components/pages/checkout/BillingInfo";
+import ShoppingCart from "./components/pages/shoppingCart/ShoppingCart";
 
 
 
@@ -25,6 +26,7 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isQuickViewOpen ,setIsQuickViewOpen] = useState(false);
   const [wishlist , setWishlist] = useState([])
+  // const [isCartOpen, setIsCartOpen] = useState(false);
   // const [cartItems , setCartItems] = useState([])
 
   const addToWishlist = (product) => {
@@ -62,6 +64,7 @@ return (
    <Route path="*" element= {<ErrorPage />}></Route>
    <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route>
    <Route path="/blog" element={<BillingInfo/>}></Route>
+   <Route path="/blog" element={<ShoppingCart/>}></Route>
    </Route>
   </Routes>
    {isQuickViewOpen && (
