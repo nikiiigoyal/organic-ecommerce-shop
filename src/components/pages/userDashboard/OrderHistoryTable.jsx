@@ -18,14 +18,15 @@ const OrderHistoryTable = ({ orders }) => {
         </tr>
     </thead>
     <tbody>
-        {orders.map((order) => {
-            <tr key={order.id}>
-                <td>{order.date}</td>
-                <td>{order.total}</td>
-                <td>{order.status}</td>
-                <td><a href={`/orders/${order.id}`}>View Details</a></td>
-            </tr>
-        })}
+    {orders.map((order) => (
+    <tr key={order.id}>
+        <td>{order.id}</td>
+        <td>{order.date}</td>
+        <td>{order.total}</td>
+        <td>{order.status}</td>
+        <td><a href={`/orders/${order.id}`}>View Details</a></td>
+    </tr>
+))}
     </tbody>
         </table>
         </div>

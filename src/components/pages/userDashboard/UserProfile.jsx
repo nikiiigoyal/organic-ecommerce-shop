@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 const UserProfile = ({user}) => {
+    if (!user) return null;
     return (
         <>
         <div className="flex items-center font-poppins border border-[#E6E6E6] mx-auto my-2">

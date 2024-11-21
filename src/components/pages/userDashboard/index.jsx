@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react"
 import UserProfile from "./UserProfile";
 import OrderHistoryTable from "./OrderHistoryTable";
-import BillingAddress from "./BillingAddress";
+import {BillingAddress} from "./BillingAddress";
+import Navigation from "../Navigation";
 
 const Dashboard = () => {
     const [user, setUser] = useState (null);
@@ -11,7 +12,7 @@ const Dashboard = () => {
         fetchUserData();
         fetchOrderHistory();
         fetchBillingAddress();
-    })
+    },[]);
     const fetchUserData = () => {
         setUser ({
             name: 'Dianee Russell',
@@ -32,20 +33,21 @@ const Dashboard = () => {
         // Fetch billing address data from API
         setBillingAddress({
           fullName: 'Dianne Russell',
-          streetAddress: '4140 Parker Rd.',
+          streetAddress: '4140 Parker Rd',
           city: 'Allentown',
           state: 'New Mexico',
           zipCode: '31124',
-        
           email: 'dianne.russell@gmail.com',
           phone: '(671) 555-0110'
         });
       };
     return(
         <div>
+            <Navigation />
             <UserProfile user={user} />
             <OrderHistoryTable orders={orders}/>
             <BillingAddress address={billingAddress}/>
+            
         </div>
     )
 }

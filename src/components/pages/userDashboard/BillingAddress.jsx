@@ -1,5 +1,8 @@
 /* eslint-disable react/prop-types */
-const BillingAddress = ({address}) => {
+export const BillingAddress = ({address}) => {
+    if (!address) {
+        return null; // or a placeholder/loading state
+    }
     return(
         <>
         <div className="flex flex-col border border-[#E6E6E6] mx-auto p-3">
@@ -15,4 +18,3 @@ const BillingAddress = ({address}) => {
         </>
     )
 }
-export default BillingAddress;
