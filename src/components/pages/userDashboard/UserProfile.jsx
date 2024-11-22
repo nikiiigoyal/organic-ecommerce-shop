@@ -3,14 +3,14 @@ const UserProfile = ({user}) => {
     if (!user) return null;
     return (
         <>
-        <div className="flex items-center font-poppins border border-[#E6E6E6] mx-auto my-2">
+        <div className="flex flex-col items-center font-poppins border border-[#E6E6E6] mx-auto my-2">
             <div>
-                <img src={user.profilePicture} alt={user.name}></img>
+                <img src={user.profilePicture} alt={user.name} className="mb-4 w-[100px] h-[100px]"></img>
             </div>
          <div>
-            <h3 className="text-[#1A1A1A]">{user.name}</h3>
-            <p className="text-[#808080]">Customer</p>
-            <button className="text-[#20B526] p-2">Edit Profile</button>
+            <h3 className="text-[#1A1A1A] font-semibold">{user.name}</h3>
+            <p className="text-[#808080] text-center">Customer</p>
+            <button className="text-[#20B526] text-center px-4 py-3">Edit Profile</button>
          </div>
         </div>
         </>
