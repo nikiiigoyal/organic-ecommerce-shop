@@ -1,7 +1,7 @@
 const Navigation = () => {
     return (
         <>
-        <div className="flex flex-col border border-[#E6E6E6] p-5 m-5 font-poppins w-[300px]">
+        <div className="flex flex-col border border-[#E6E6E6] p-5  font-poppins w-[300px]">
         <h1 className="text-[#1A1A1A] text-[20px] mb-2">Navigation</h1>
         <div className="flex flex-row mx-2 p-2 items-center">
             <img src="images/dashboard.png"></img>
