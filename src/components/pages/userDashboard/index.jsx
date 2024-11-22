@@ -42,12 +42,41 @@ const Dashboard = () => {
         });
       };
     return(
-        <div>
-            <Navigation />
-            <UserProfile user={user} />
-            <OrderHistoryTable orders={orders}/>
-            <BillingAddress address={billingAddress}/>
-            
+        <div className="min-h-screen bg-gray-50">
+            {/* First grid for overall layout - splits into sidebar and main content */}
+            <div className="grid grid-cols-12 gap-6 p-6">
+                {/* Sidebar Navigation - takes 2 columns on large screens */}
+                <div className="col-span-12 lg:col-span-2">
+                    <div className="bg-white rounded-lg shadow-sm">
+                        <Navigation />
+                    </div>
+                </div>
+
+                {/* Main Content Area - takes remaining 10 columns */}
+                <div className="col-span-12 lg:col-span-10">
+                    {/* Second grid for the top row (Profile and Billing) */}
+                    <div className="grid grid-cols-2 gap-6 mb-6">
+                        {/* User Profile - takes first column */}
+                        <div className="col-span-1">
+                            <div className="bg-white rounded-lg shadow-sm p-6">
+                                {user && <UserProfile user={user} />}
+                            </div>
+                        </div>
+
+                        {/* Billing Address - takes second column */}
+                        <div className="col-span-1">
+                            <div className="bg-white rounded-lg shadow-sm p-6">
+                                {billingAddress && <BillingAddress address={billingAddress} />}
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Order History - full width below */}
+                    <div className="bg-white rounded-lg shadow-sm p-6">
+                        <OrderHistoryTable orders={orders} />
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }
