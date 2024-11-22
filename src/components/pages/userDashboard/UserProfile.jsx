@@ -3,7 +3,7 @@ const UserProfile = ({user}) => {
     if (!user) return null;
     return (
         <>
-        <div className="flex flex-col items-center font-poppins border border-[#E6E6E6] mx-auto my-2">
+        <div className="flex flex-col items-center font-poppins border border-[#E6E6E6] my-2 w-[500px]">
             <div>
                 <img src={user.profilePicture} alt={user.name} className="mb-4 w-[100px] h-[100px]"></img>
             </div>
