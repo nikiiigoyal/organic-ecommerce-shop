@@ -20,6 +20,11 @@ import { Wishlist } from "./components/pages/wishlist/Wishlist";
 // import Dashboard from "./components/pages/userDashboard";
 
 import { OrderHistory } from "./components/pages/orderHistory";
+import Navigation from "./components/pages/Navigation";
+import Dashboard from "./components/pages/userDashboard";
+import OrderHistoryTable from "./components/pages/userDashboard/OrderHistoryTable";
+import ShoppingCart from "./components/pages/shoppingCart/ShoppingCart";
+import { Settings } from "./components/pages/settings";
 
 
 
@@ -65,9 +70,20 @@ return (
    <Route path="/faq" element= {<Faq />}></Route>
    <Route path="/products" element= {<Products />}></Route>
    <Route path="*" element= {<ErrorPage />}></Route>
-   <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route>
+   {/* <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route> */}
    {/* <Route path="/blog" element={<BillingInfo/>}></Route> */}
    <Route path="/blog" element={<OrderHistory />}></Route>
+   <Route path="/pages" element={<Navigation />}>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="orderHistory" element={<OrderHistoryTable />} />
+            <Route path="wishlist" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />} />
+            <Route path="cart" element={<ShoppingCart />} />
+            
+            <Route path="settings" element={<Settings />} />
+            <Route path="LogOut" element={<ErrorPage />} />
+          </Route>
+
+
    </Route>
   </Routes>
    {isQuickViewOpen && (
