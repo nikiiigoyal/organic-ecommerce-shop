@@ -22,10 +22,10 @@ import { Wishlist } from "./components/pages/wishlist/Wishlist";
 import { OrderHistory } from "./components/pages/orderHistory";
 import Navigation from "./components/pages/Navigation";
 import Dashboard from "./components/pages/userDashboard";
-import OrderHistoryTable from "./components/pages/userDashboard/OrderHistoryTable";
+
 import ShoppingCart from "./components/pages/shoppingCart/ShoppingCart";
 import { Settings } from "./components/pages/settings";
-
+import { AuthProvider } from "./components/AuthProvider";
 
 
 // import Homepage from "./components/pages/homepage/sections";
@@ -53,7 +53,9 @@ function App() {
     //   setCartItems
     // }
 return (
+
   <BrowserRouter>
+    <AuthProvider>
   
   {/* <Layout> */}
     <Routes>
@@ -72,20 +74,19 @@ return (
    <Route path="*" element= {<ErrorPage />}></Route>
    {/* <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route> */}
    {/* <Route path="/blog" element={<BillingInfo/>}></Route> */}
-   <Route path="/blog" element={<OrderHistory />}></Route>
+   <Route path="/blog" element={<CreateForm />}></Route>
    <Route path="/pages" element={<Navigation />}>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="orderHistory" element={<OrderHistoryTable />} />
-            <Route path="wishlist" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />} />
-            <Route path="cart" element={<ShoppingCart />} />
-            
-            <Route path="settings" element={<Settings />} />
-            <Route path="LogOut" element={<ErrorPage />} />
-          </Route>
-
+    <Route index element={<Dashboard />} />
+    <Route path="orderHistory" element={<OrderHistory />} />
+    <Route path="wishlist" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />} />
+    <Route path="cart" element={<ShoppingCart />} />
+    <Route path="settings" element={<Settings />} />
+    <Route path="LogOut" element={<ErrorPage />} />
+</Route>
 
    </Route>
   </Routes>
+  </AuthProvider>
    {isQuickViewOpen && (
           <QuickViewModal
             product={selectedProduct}
@@ -94,7 +95,9 @@ return (
           />
         )}
   {/* </Layout> */}
+ 
   </BrowserRouter>
+ 
   )
 }
 
