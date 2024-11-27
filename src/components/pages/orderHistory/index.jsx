@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import OrderHistoryTable from "./OrderHistory";
-import Navigation from "../Navigation";
+
 
  export const OrderHistory = () => {
     const [orders,setOrders] = useState([]);
@@ -27,7 +27,7 @@ import Navigation from "../Navigation";
 return(
     <>
       <div className="flex flex-row my-5">
-        <Navigation />
+       
         <OrderHistoryTable orders={orders}/>
       </div>
     </>
