@@ -1,5 +1,10 @@
+import { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider';
+
 const Header = () => {
+  const {user} = useContext (AuthContext)
+  console.log(user)
     return (
       <header className="header font-sans">
         {/* top bar */}
@@ -19,6 +24,7 @@ const Header = () => {
               {/* Add more currency options */}
             </select>
             <span className='text-gray-100'>|</span>
+            {!!user?.email && <p>Welcome! {user?.email}</p>}
             <Link to="/signin"  className='text-gray-600 text-[12px]'>Sign In / Sign Up</Link>
           </div>
         </div>
