@@ -11,7 +11,7 @@ const Navigation = () => {
                         end
                         className={({ isActive }) => `
                             flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-200'}
+                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
                         `}
                     >
                         {/* Dashboard Icon */}
@@ -25,7 +25,7 @@ const Navigation = () => {
                         to="/pages/orderHistory" 
                         className={({ isActive }) => `
                             flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-200'}
+                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
                         `}
                     >
                         {/* List Icon */}
@@ -39,7 +39,7 @@ const Navigation = () => {
                         to="/pages/wishlist" 
                         className={({ isActive }) => `
                             flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-200'}
+                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
                         `}
                     >
                         {/* Heart Icon */}
@@ -53,7 +53,7 @@ const Navigation = () => {
                         to="/pages/cart" 
                         className={({ isActive }) => `
                             flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-200'}
+                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
                         `}
                     >
                         {/* Shopping Cart Icon */}
@@ -67,7 +67,7 @@ const Navigation = () => {
                         to="/pages/settings" 
                         className={({ isActive }) => `
                             flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600' : 'hover:bg-gray-200'}
+                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
                         `}
                     >
                         {/* Settings Icon */}
