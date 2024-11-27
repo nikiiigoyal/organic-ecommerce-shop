@@ -66,6 +66,7 @@ return (
    <Route path="/shop" element={<ShopPage onQuickView={handleQuickView} addToWishlist={addToWishlist}/>}></Route>
    
    <Route path="/signin" element={<SignInForm />}></Route>
+   <Route path="/CreateForm" element={<CreateForm />} />
    <Route path="/about" element={<About />}></Route>
    <Route path="/contact" element={<Contact />}></Route>
    <Route path="/register" element={<CreateForm />}></Route>
