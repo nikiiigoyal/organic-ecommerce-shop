@@ -1,15 +1,15 @@
 export const BillingInfo = () => {
     return (
-      <div className="flex flex-col justify-between font-poppins w-[80%]">
+      <div className="my-6 border border-gray-100 flex flex-col justify-between font-poppins w-[70%]">
         <h1 className="text-[#1A1A1A] text-[24px] mb-4 font-semibold">
           Billing Information
         </h1>
         <div className="flex justify-between">
-          <div className="w-[40%]">
+          <div className="">
             <label className="">
               <h3 className="text-[#1A1A1A] text-[16px] mb-2">First name</h3>
               <input
-                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
+                className="px-4 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-lg"
                 placeholder="Your first name"
               ></input>
             </label>
