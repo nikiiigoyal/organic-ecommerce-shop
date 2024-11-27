@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import UserProfile from "./UserProfile";
 import OrderHistoryTable from "./OrderHistoryTable";
 import {BillingAddress} from "./BillingAddress";
-import Navigation from "../Navigation";
+
 
 const Dashboard = () => {
     const [user, setUser] = useState (null);
@@ -47,9 +47,9 @@ const Dashboard = () => {
             <div className="grid grid-cols-12 gap-6 p-6">
                 {/* Sidebar Navigation - takes 2 columns on large screens */}
                 <div className="col-span-12 lg:col-span-2">
-                    <div className="bg-white rounded-lg shadow-sm">
+                    {/* <div className="bg-white rounded-lg shadow-sm">
                         <Navigation />
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* Main Content Area - takes remaining 10 columns */}
