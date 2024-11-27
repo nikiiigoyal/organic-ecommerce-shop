@@ -1,10 +1,13 @@
 import { supabase } from "@/supabase"
 import { useState } from "react"
+import { useNavigate } from "react-router-dom"
+
+
 export function SignInForm () {
+    const navigate = useNavigate()
     const [email, setEmail] = useState("")
     const [password,setPassword] = useState("")
-   
-    const [errorMessage,setErrorMessage] = useState("")
+   const [errorMessage,setErrorMessage] = useState("")
     const handleSignIn = async (e) => {
         console.log("email",email)
         console.log("password",password)
@@ -23,7 +26,9 @@ export function SignInForm () {
           setErrorMessage(error.message)
         }
       }
-    
+      const handleRegisterClick = () => {
+        navigate("/CreateForm")
+    }
     return (
        
         <div>
@@ -77,7 +82,9 @@ export function SignInForm () {
             </form>
         
         <p className="mt-6 text-sm text-gray-600">
-                Don&apos;t have account? <a href="#" className="text-black font-semibold hover:underline">Register</a>
+            
+                Don&apos;t have account? <button  type="button" 
+                        onClick={handleRegisterClick} className="text-black font-semibold hover:underline">Register</button>
             </p>
         </div>
         </div>
