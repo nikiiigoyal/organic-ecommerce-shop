@@ -1,5 +1,6 @@
 import { useState } from "react"
 import CartItem from "./CartItem"
+import CouponCode from "./CouponCode"
 
 function ShoppingCart () {
     const [cartItems, setCartItems] = useState([])
@@ -47,8 +48,10 @@ function ShoppingCart () {
         <div>
           <button className="bg-[#00B207] text-white px-4 py-2 rounded-full w-full">Proceed to checkout</button>
         </div>
+
       </div>
         </div>
+        <CouponCode />
         </>
     )
 }
