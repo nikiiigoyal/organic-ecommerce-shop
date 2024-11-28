@@ -21,7 +21,7 @@ function ShoppingCart () {
       };
     return (
         <>
-        <div className="mx-w-[1200px] mx-auto p-2">
+        <div className="mx-w-[1200px] mx-auto p-2 ">
             <h1 className="text-2xl font-semibold text-center mb-6">My Shopping Cart</h1>
             <div> {cartItems.map(item => (
                 <CartItem key={item.id}
@@ -30,18 +30,22 @@ function ShoppingCart () {
                 onRemove={removeItem}/>
             ))}
             </div>
-          <div className="mt-2 ml-auto p-2 border border-b-[#eee] w-[300px]">
-        <div className="subtotal">
-          <span>Subtotal:</span>
+          <div className="mt-2 ml-auto p-2 border border-b-[#eee] rounded-lg w-[300px]">
+        <h1 className="text-[#1A1A1A] text-[20px] mb-2">Cart Total</h1>
+        <div className="subtotal flex flex-row justify-between my-3 border-b-2 pb-1">
+          <span className="text-[#4D4D4D] text-sm">Subtotal:</span>
           <span>${calculateSubtotal().toFixed(2)}</span>
         </div>
-        <div className="shipping">
-          <span>Shipping:</span>
+        <div className="shipping flex flex-row justify-between my-3 border-b-2 pb-1">
+          <span className="text-[#4D4D4D]text-sm">Shipping:</span>
           <span>Free</span>
         </div>
-        <div className="total">
-          <span>Total:</span>
+        <div className="total flex flex-row justify-between my-3 border-b-2 pb-1">
+          <span className="text-[#4D4D4D]text-sm">Total:</span>
           <span>${calculateSubtotal().toFixed(2)}</span>
+        </div>
+        <div>
+          <button className="bg-[#00B207] text-white px-4 py-2 rounded-full w-full">Proceed to checkout</button>
         </div>
       </div>
         </div>
