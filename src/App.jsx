@@ -26,6 +26,7 @@ import Dashboard from "./components/pages/userDashboard";
 import ShoppingCart from "./components/pages/shoppingCart/ShoppingCart";
 import { Settings } from "./components/pages/settings";
 import { AuthProvider } from "./components/AuthProvider";
+import { CartPayment } from "./components/pages/cartPayment";
 
 
 // import Homepage from "./components/pages/homepage/sections";
@@ -75,7 +76,7 @@ return (
    <Route path="*" element= {<ErrorPage />}></Route>
    {/* <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route> */}
    {/* <Route path="/blog" element={<BillingInfo/>}></Route> */}
-   <Route path="/blog" element={<CreateForm />}></Route>
+   <Route path="/blog" element={<CartPayment />}></Route>
    <Route path="/pages" element={<Navigation />}>
     <Route index element={<Dashboard />} />
     <Route path="orderHistory" element={<OrderHistory />} />
