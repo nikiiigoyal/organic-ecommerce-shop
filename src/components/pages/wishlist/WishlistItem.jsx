@@ -2,9 +2,7 @@
 const WishlistItem = ({product , onRemoveFromWishlist}) => {
     return(
 <>
-
-      
-        <tr>
+<tr>
           <td className="p-4">
             <div className="flex items-center">
               <img src={product.image} alt={product.name} className="rounded-lg w-12 h-12 mr-4" />
