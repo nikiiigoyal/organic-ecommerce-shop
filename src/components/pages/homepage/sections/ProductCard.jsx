@@ -1,6 +1,32 @@
 /* eslint-disable react/prop-types */
-
+import { supabase } from "@/supabase";
+import { useEffect,useState } from "react";
 const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
+    const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
+
+  // Fetch data
+  useEffect (() => {
+    const fetchData = async () => {
+        try {
+          const { data, error } = await supabase
+            .from('grocery_products')
+            .select('*')
+            
+          if (error) throw error
+          setData(data)
+        } catch (err) {
+          setError(err.message)
+        } finally {
+          setLoading(false)
+        }
+      }
+      fetchData()
+     
+  },[])
+  console.log(data)
+    
     const handleAddToWishlist = () => {
         addToWishlist(product)
         console.log("clickeddd")
