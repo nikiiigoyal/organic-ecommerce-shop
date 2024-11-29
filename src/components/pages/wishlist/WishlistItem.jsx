@@ -27,10 +27,10 @@ const WishlistItem = ({product , onRemoveFromWishlist}) => {
               Add to Cart
             </button>
             <button
-              className=" hover:bg-red-600 text-white py-1 px-2 rounded-full"
+              className=" hover:bg-red-600 text-white py-1 bg-black px-2 rounded-full"
               onClick={() => onRemoveFromWishlist(product)}
             >
-              <img src="images/closeicon.svg" alt="Remove" className="w-5 h-5" />
+              <img src="/images/closeicon.svg" alt="Remove" className="w-5 h-5" />
             </button>
           </td>
         </tr>
