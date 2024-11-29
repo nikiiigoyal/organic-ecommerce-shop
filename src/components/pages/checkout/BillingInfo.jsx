@@ -1,6 +1,6 @@
 export const BillingInfo = () => {
     return (
-      <div className="my-6 border border-gray-100 flex flex-col justify-between font-poppins w-[70%]">
+      <div className="my-6 ml-4 border border-gray-100 flex flex-col justify-between font-poppins w-[70%]">
         <h1 className="text-[#1A1A1A] text-[24px] mb-4 font-semibold">
           Billing Information
         </h1>
