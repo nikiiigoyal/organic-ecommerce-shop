@@ -3,8 +3,8 @@ import { supabase } from "@/supabase";
 import { useEffect,useState } from "react";
 const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
     const [data, setData] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+//   const [loading, setLoading] = useState(true)
+//   const [error, setError] = useState(null)
 
   // Fetch data
   useEffect (() => {
