@@ -3,8 +3,8 @@ import { supabase } from "@/supabase";
 import { useEffect,useState } from "react";
 const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
     const [data, setData] = useState([])
-//   const [loading, setLoading] = useState(true)
-//   const [error, setError] = useState(null)
+   const [loading, setLoading] = useState(true)
+ const [error, setError] = useState(null)
 
   // Fetch data
   useEffect (() => {
@@ -57,7 +57,7 @@ const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
                 <div>
                     <h2 className="text-[14px] text-gray-700 font-semibold mt-2">{product.name}</h2>
                     <div className="flex items-center space-x-2">
-                        <p className="text-[#1A1A1A]">${product.price.toFixed(2)}</p>
+                        <p className="text-[#1A1A1A]">${product.price}</p>
                         {product.oldPrice && (
                             <p className="line-through text-gray-400">${product.oldPrice.toFixed(2)}</p>
                         )}

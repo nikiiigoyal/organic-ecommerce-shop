@@ -2,13 +2,54 @@
 import { Link } from "react-router-dom";
 import { SaleBanner } from "./Salebanner";
 import { Filters } from "./Filters";
-import { products } from "../../../constants";
+// import { products } from "../../../constants";
 import ProductCard from "../homepage/sections/ProductCard";
+import { useEffect,useState } from "react";
+import { supabase } from "@/supabase";
 
  
 
 export function ShopPage ({onQuickView ,addToWishlist}) {
-    
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+ useEffect(() => {
+  const fetchProducts = async () => {
+   try {
+    const {data,error} = await supabase
+    .from("grocery_products")
+    .select("*");
+    if (error) {
+      throw error;
+    }
+    data.forEach(product => {
+      console.log('Product Image Details:');
+      console.log('Image URL:', product.image);
+      console.log('Image Type:', typeof product.image);
+      console.log('Is Array:', Array.isArray(product.image));
+    });
+    setProducts(data || [])
+    setLoading(false)
+
+   } catch (err) {
+    console.log("error fetching products",err)
+    setError(err.message)
+    setLoading(false)
+   }
+  }
+  fetchProducts();
+ },[]);
+ if (loading) {
+  return (
+    <div>Loading products...</div>
+  )
+ }
+ if (error) {
+  return(
+    <div>Error LOading Products...{error}</div>
+  )
+ }
+
     return (
         <>
         <div className="container mx-auto px-4 py-2">
