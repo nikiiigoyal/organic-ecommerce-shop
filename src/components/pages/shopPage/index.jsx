@@ -31,6 +31,8 @@ export function ShopPage ({onQuickView ,addToWishlist}) {
     setProducts(data || [])
     setLoading(false)
 
+
+
    } catch (err) {
     console.log("error fetching products",err)
     setError(err.message)
