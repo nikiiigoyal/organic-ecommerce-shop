@@ -34,7 +34,7 @@ const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
     return (
         <div key={product.id} className="border p-4 rounded shadow-md relative flex flex-col hover:border-green-500 transition duration-300">
             <div className="relative group">
-                <img src={product.image} alt={product.name} className="mb-4 transition-transform duration-300 group-hover:scale-105" />
+                <img src={product.image_urls} alt={product.name} className="mb-4 transition-transform duration-300 group-hover:scale-105" />
 
                 {/* Heart and eye icons */}
                 <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 flex flex-col justify-around pt-5">
