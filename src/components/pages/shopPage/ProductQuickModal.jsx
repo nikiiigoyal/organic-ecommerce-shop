@@ -52,7 +52,7 @@ return (
     <div className="flex flex-row-reverse justify-end">
                                 <div className="relative">
                                     <img
-                                        src={product.image}
+                                        src={product.image_urls}
                                         alt={product.name}
                                         className="w-full h-full object-contain"
                                     />
