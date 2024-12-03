@@ -58,8 +58,8 @@ const ProductCard = ({ product, onQuickView ,addToWishlist }) => {
                     <h2 className="text-[14px] text-gray-700 font-semibold mt-2">{product.name}</h2>
                     <div className="flex items-center space-x-2">
                         <p className="text-[#1A1A1A]">${product.price}</p>
-                        {product.oldPrice && (
-                            <p className="line-through text-gray-400">${product.oldPrice.toFixed(2)}</p>
+                        {product.old_price && (
+                            <p className="line-through text-gray-400">{product.old_price.toFixed(2)}</p>
                         )}
                     </div>
                     {product.sale && (
