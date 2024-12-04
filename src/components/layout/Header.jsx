@@ -40,6 +40,7 @@ const Header = () => {
           <div className="search-bar flex-1 max-w-xl mx-8">
             <div className='relative'>
             <input type="text" placeholder="Search" className='w-full py-2 px-4 pr-12 border border-gray-300 rounded-md' />
+
             <button type="submit" className='absolute right-0 top-0 px-[20px] py-[10px] bg-[#4CAF50] text-white border-none cursor-pointer rounded-r-md h-full'>Search</button>
           </div>
           </div>
