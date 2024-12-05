@@ -159,13 +159,20 @@ const Header = () => {
         </div>
         <div className="cart flex items-center space-x-6">
           <img src="/images/Heart.png"></img>
-          <div className="relative">
-            <Link to="/cart">
-              <span className="cart-icon">🛒</span>
-            </Link>
-          </div>
-          <div className="flex items-center">
-            <span className="cart-amount mr-2">$57.00</span>
+          <div className="flex">
+            <div className="relative flex items-center pl-1">
+              <Link to="/cart">
+                <span className="cart-icon">
+                  <img src="/images/Bag.png"></img>
+                </span>
+              </Link>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-[#4D4D4D] text-[11px]">Shopping cart</h3>
+              <span className="text-[#1A1A1A] text-sm font-semibold mr-2">
+                $57.00
+              </span>
+            </div>
           </div>
         </div>
       </div>
