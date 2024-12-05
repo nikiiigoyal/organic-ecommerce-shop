@@ -10,18 +10,27 @@ const Header = () => {
 
   // search states
   const [searchTerm, setSearchTerm] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
+  const [searchResults, setSearchResults] = useState(null);
+  const [error, setError] = useState(null);
 
   // search handler
 
   const handleSearch = async (e) => {
     e.preventDefault();
 
+    //reset previous state
+    setSearchResults(null);
+    setError(null);
+
     if (!searchTerm.trim()) {
-      alert('Please enter a search term');
+      navigate('/products', { state: { searchTerm: '' } });
       return;
     }
 
     try {
+      setIsLoading(true);
+
       const { data, error } = await supabase
         .from('grocery_products')
         .select('*')
@@ -29,6 +38,19 @@ const Header = () => {
         .limit(10);
 
       if (error) throw error;
+
+      // If no results found
+      if (!data || data.length === 0) {
+        setError(`No products found for "${searchTerm}"`);
+        setSearchResults([]);
+        navigate('/products', {
+          state: {
+            searchResults: [],
+            searchTerm: searchTerm,
+          },
+        });
+        return;
+      }
 
       navigate('/products', {
         state: {
@@ -38,8 +60,17 @@ const Header = () => {
       });
     } catch (error) {
       console.error('Error searching products:', error);
-      alert('Failed to search products');
+      setError('Failed to search products');
+    } finally {
+      setIsLoading(false);
     }
+  };
+  //handler for clearing search
+  const handleClearSearch = () => {
+    setSearchTerm('');
+    setSearchResults(null);
+    setError(null);
+    navigate('/products', { state: { searchResults: null, searchTerm: '' } });
   };
 
   return (
@@ -89,21 +120,41 @@ const Header = () => {
         </div>
         <div className="search-bar flex-1 max-w-xl mx-8">
           <div className="relative">
-            <input
-              type="text"
-              placeholder="Search"
-              className="w-full py-2 px-4 pr-12 border border-gray-300 rounded-md"
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-            />
+            <form onSubmit={handleSearch}>
+              <input
+                type="text"
+                placeholder="Search"
+                className="w-full py-2 px-4 pr-12 border border-gray-300 rounded-md outline-none"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+              />
+              {searchTerm && (
+                <button type="button" onClick={handleClearSearch}>
+                  ×
+                </button>
+              )}
 
-            <button
-              type="submit"
-              className="absolute right-0 top-0 px-[20px] py-[10px] bg-[#4CAF50] text-white border-none cursor-pointer rounded-r-md h-full"
-              onClick={handleSearch}
-            >
-              Search
-            </button>
+              <button
+                type="submit"
+                className="absolute right-0 top-0 px-[20px] py-[10px] bg-[#4CAF50] text-white border-none cursor-pointer rounded-r-md h-full"
+                onClick={handleSearch}
+              >
+                Search
+              </button>
+            </form>
+            {/* loading indicator */}
+            {isLoading && (
+              <div className="loader-container">
+                <div className="loader"></div>
+                <p>Searching products...</p>
+              </div>
+            )}
+            {/* Error Handling */}
+            {error && (
+              <div className="error-container">
+                <p>{error}</p>
+              </div>
+            )}
           </div>
         </div>
         <div className="cart flex items-center space-x-6">
