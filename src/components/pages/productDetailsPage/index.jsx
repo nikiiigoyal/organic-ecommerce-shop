@@ -5,7 +5,6 @@
 // import { DescriptionsTab } from "./DescriptionsTab"
 // import { AdditionalInfo } from "./AdditionalInfo"
 
-
 // export const ProductDetails = ({productId = 2}) => {
 //     const [activeTab , setActiveTab] = useState('Descriptions')
 //     return (
@@ -18,4 +17,4 @@
 //         </div>
 //         </>
 //     )
-// // 
+// //
