@@ -4,9 +4,9 @@
 // export const AdditionalInfo = ({ productId }) => {
 //     // Convert productId to number if it's coming as string
 //     const numericId = typeof productId === 'string' ? parseInt(productId) : productId
-    
+
 //     const product = products.find(p => p.id === numericId)
-    
+
 //     const getInfoRows = (product) => {
 //         const rows = [];
 //         if (product.weight) rows.push({label: 'Weight', value: product.weight})
@@ -31,7 +31,7 @@
 //             <table className="w-full">
 //                 <tbody>
 //                     {infoRows.map((row, index) => (
-//                         <tr 
+//                         <tr
 //                             key={row.label}
 //                             className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'}`}
 //                         >
@@ -44,7 +44,7 @@
 //                         </tr>
 //                     ))}
 //                 </tbody>
-//             </table>    
+//             </table>
 //         </div>
 //         </>
 //     )
