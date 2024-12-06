@@ -42,7 +42,7 @@ const Footer = () => {
               placeholder="Your email address"
               className="px-4 py-3 w-80 border border-gray-300 rounded-full h-[52px] focus:outline-none"
             />
-            <button className="bg-[#00B207] text-white px-6 py-3 rounded-full absolute right-1 top-1/2 transform -translate-y-1/2 hover:bg-green-600 transition duration-300">
+            <button className="bg-[#00B207] text-white px-6 py-3 rounded-full absolute right-[-1px] top-1/2 transform -translate-y-1/2 hover:bg-green-600 transition duration-300">
               Subscribe
             </button>
           </div>
