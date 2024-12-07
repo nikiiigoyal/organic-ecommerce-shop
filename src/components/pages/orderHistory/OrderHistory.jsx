@@ -20,17 +20,25 @@ const OrderHistoryTable = ({ orders }) => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
-              <tr key={order.id}>
-                <td className="py-3 text-[#333333] text-sm">{order.id}</td>
-                <td className="py-3 text-[#333333] text-sm">{order.date}</td>
-                <td className="py-3 text-[#333333] text-sm">{order.total}</td>
-                <td className="py-3 text-[#333333] text-sm">{order.status}</td>
-                <td className="text-[#20B526] text-sm">
-                  <a href={`/orders/${order.id}`}>View Details</a>
-                </td>
-              </tr>
-            ))}
+            {orders.length === 0
+              ? 'No orders found'
+              : orders.map((order) => (
+                  <tr key={order.id}>
+                    <td className="py-3 text-[#333333] text-sm">{order.id}</td>
+                    <td className="py-3 text-[#333333] text-sm">
+                      {order.date}
+                    </td>
+                    <td className="py-3 text-[#333333] text-sm">
+                      {order.total}
+                    </td>
+                    <td className="py-3 text-[#333333] text-sm">
+                      {order.status}
+                    </td>
+                    <td className="text-[#20B526] text-sm">
+                      <a href={`/orders/${order.id}`}>View Details</a>
+                    </td>
+                  </tr>
+                ))}
           </tbody>
         </table>
       </div>

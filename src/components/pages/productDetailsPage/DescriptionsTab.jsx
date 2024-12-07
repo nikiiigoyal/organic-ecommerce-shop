@@ -1,5 +1,3 @@
-
-
 // import { QuickViewModal } from "../shopPage/ProductQuickModal";
 // import { RightSideImage } from "./RightSide";
 

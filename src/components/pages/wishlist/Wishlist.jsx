@@ -3,6 +3,7 @@
 import WishlistItem from './WishlistItem';
 
 export const Wishlist = ({ wishlist, onRemoveFromWishlist }) => {
+  console.log('wishlist', wishlist);
   return (
     <>
       <div className="bg-white shadow-md rounded-lg p-6 w-full max-w-4xl mx-auto font-poppins">
@@ -18,13 +19,23 @@ export const Wishlist = ({ wishlist, onRemoveFromWishlist }) => {
               </tr>
             </thead>
             <tbody>
-              {wishlist.map((product) => (
-                <WishlistItem
-                  key={product.id}
-                  product={product}
-                  onRemoveFromWishlist={onRemoveFromWishlist}
-                />
-              ))}
+              {wishlist.length === 0 ? (
+                <tr>
+                  <td colSpan={4} className="p-8">
+                    <h1 className="text-center font-semibold text-4xl">
+                      No products found in wishlist
+                    </h1>
+                  </td>
+                </tr>
+              ) : (
+                wishlist.map((product) => (
+                  <WishlistItem
+                    key={product.id}
+                    product={product}
+                    onRemoveFromWishlist={onRemoveFromWishlist}
+                  />
+                ))
+              )}
             </tbody>
           </table>
         </div>
