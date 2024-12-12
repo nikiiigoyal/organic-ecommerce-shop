@@ -7,28 +7,19 @@ import { CreateForm } from './components/pages/CreateAccount';
 import { ErrorPage } from './components/pages/ErrorPage';
 import Homepage from './components/pages/homepage/sections';
 import { Layout } from './components/layout/Layout.jsx';
-
 import { ShopPage } from './components/pages/shopPage';
 import { About } from './components/pages/About';
 import { Contact } from './components/pages/Contact';
-// import { ProductDetails } from "./components/pages/productDetailsPage";
 import { QuickViewModal } from './components/pages/shopPage/ProductQuickModal';
 import { Products } from './Products';
 import { Wishlist } from './components/pages/wishlist/Wishlist';
-// import { BillingInfo } from "./components/pages/checkout/BillingInfo";
-// import ShoppingCart from "./components/pages/shoppingCart/ShoppingCart";
-// import Dashboard from "./components/pages/userDashboard";
-
 import { OrderHistory } from './components/pages/orderHistory';
 import Navigation from './components/pages/Navigation';
 import Dashboard from './components/pages/userDashboard';
-
 import ShoppingCart from './components/pages/shoppingCart/ShoppingCart';
 import { Settings } from './components/pages/settings';
 import { AuthProvider } from './components/AuthProvider';
 import { CartPayment } from './components/pages/cartPayment';
-
-// import Homepage from "./components/pages/homepage/sections";
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -88,8 +79,7 @@ function App() {
             <Route path="/faq" element={<Faq />}></Route>
             <Route path="/products" element={<Products />}></Route>
             <Route path="*" element={<ErrorPage />}></Route>
-            {/* <Route path="/pages" element={<Wishlist wishlist={wishlist} onRemoveFromWishlist={removeFromWishlist} />}></Route> */}
-            {/* <Route path="/blog" element={<BillingInfo/>}></Route> */}
+
             <Route path="/blog" element={<CartPayment />}></Route>
             <Route path="/pages" element={<Navigation />}>
               <Route index element={<Dashboard />} />
