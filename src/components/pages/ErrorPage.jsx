@@ -10,9 +10,11 @@ export function ErrorPage() {
           Ut consequat ac tortor eu vehicula. Aenean accumsan purus eros.
           Maecenas sagittis tortor at metus mollis
         </p>
-        <button className="bg-[#00B207] text-white rounded-full py-3 px-8 mx-auto">
-          Back to Home
-        </button>
+        <a href="/">
+          <button className="bg-[#00B207] text-white rounded-full py-3 px-8 mx-auto">
+            Back to Home
+          </button>
+        </a>
       </div>
     </>
   );
