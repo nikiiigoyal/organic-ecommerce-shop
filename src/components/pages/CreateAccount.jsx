@@ -64,7 +64,7 @@ export function CreateForm() {
               }}
             />
             <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              👁️
+              <span className="material-symbols-outlined">visibility</span>
             </span>
           </div>
           <div className="relative">
@@ -79,7 +79,7 @@ export function CreateForm() {
               }}
             />
             <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              👁️
+              <span className="material-symbols-outlined">visibility</span>
             </span>
           </div>
           <div className="flex justify-between items-center">
