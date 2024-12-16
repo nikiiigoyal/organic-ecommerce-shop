@@ -1,5 +1,6 @@
 import { supabase } from './../../supabase';
 import { useState } from 'react';
+import PasswordInput from './PasswordInput';
 
 export function CreateForm() {
   const [email, setEmail] = useState('');
@@ -53,7 +54,11 @@ export function CreateForm() {
             />
           </div>
           <div className="relative">
-            <input
+            <PasswordInput
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {/* <input
               className="w-full border border-[#E6E6E6] text-gray-700 p-3 pr-10 rounded-md"
               placeholder="Password"
               type="password"
@@ -62,13 +67,17 @@ export function CreateForm() {
                 setPassword(e.target.value);
                 // console.log(e.target.value)
               }}
-            />
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            /> */}
+            {/* <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
               <span className="material-symbols-outlined">visibility</span>
-            </span>
+            </span> */}
           </div>
           <div className="relative">
-            <input
+            <PasswordInput
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {/* <input
               className="w-full border border-[#E6E6E6] text-gray-700 p-3 pr-10 rounded-md"
               placeholder="Confirm Password"
               type="password"
@@ -77,10 +86,10 @@ export function CreateForm() {
                 setConfirmPassword(e.target.value);
                 // console.log(e.target.value)
               }}
-            />
-            <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+            /> */}
+            {/* <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
               <span className="material-symbols-outlined">visibility</span>
-            </span>
+            </span> */}
           </div>
           <div className="flex justify-between items-center">
             <label className="flex items-center">
