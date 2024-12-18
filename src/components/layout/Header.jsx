@@ -129,9 +129,11 @@ const Header = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm && (
-                <button type="button" onClick={handleClearSearch}>
-                  ×
-                </button>
+                <div className="flex">
+                  <button type="button" onClick={handleClearSearch}>
+                    <span className="material-symbols-outlined">close</span>
+                  </button>
+                </div>
               )}
 
               <button
