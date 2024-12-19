@@ -13,6 +13,7 @@ import ProductsView from './ProductsView';
 import { SimplePopup } from '../../NewsLetterPopUp';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/supabase';
+import ProductGridSkeleton from '@/components/skeleton/ProductSkeleton';
 
 export default function Homepage({ onQuickView, addToWishlist }) {
   const [products, setProducts] = useState([]);
@@ -40,7 +41,12 @@ export default function Homepage({ onQuickView, addToWishlist }) {
     fetchProducts();
   }, []);
 
-  if (loading) return <div>Loading products...</div>;
+  if (loading)
+    return (
+      <div>
+        <ProductGridSkeleton />
+      </div>
+    );
   if (error) return <div>Error loading products: {error}</div>;
 
   return (
