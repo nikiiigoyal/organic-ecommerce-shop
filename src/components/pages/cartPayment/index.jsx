@@ -28,10 +28,6 @@ export const CartPayment = () => {
             <span className="text-[#4D4D4D]text-sm">Total:</span>
             <span>84.00</span>
           </div>
-          {/* <div>
-          <button className="bg-[#00B207] text-white px-4 py-2 rounded-full w-full">Proceed to checkout</button>
-        </div> */}
-
           <Payment />
         </div>
       </div>
