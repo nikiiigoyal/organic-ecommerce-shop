@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import { Layout } from "./components/layout/layout";
+
 import { Faq } from './components/pages/Faqs';
 import { SignInForm } from './components/pages/SignInform';
 import { CreateForm } from './components/pages/CreateAccount';
@@ -25,8 +25,6 @@ function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
   const [wishlist, setWishlist] = useState([]);
-  // const [isCartOpen, setIsCartOpen] = useState(false);
-  // const [cartItems , setCartItems] = useState([])
 
   const addToWishlist = (product) => {
     setWishlist([...wishlist, product]);
