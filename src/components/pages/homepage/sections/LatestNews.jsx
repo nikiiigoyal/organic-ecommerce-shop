@@ -1,68 +1,91 @@
+import { supabase } from '@/supabase';
+import { useEffect, useState } from 'react';
+
 const LatestNews = () => {
-  const news = [
-    {
-      image: '/images/news.png',
-      date: '18',
-      month: 'Nov',
-      category: 'Food',
-      author: 'Admin',
-      comments: '65',
-      title:
-        'Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.',
-      link: '#',
-    },
-    {
-      image: '/images/news.png',
-      date: '29',
-      month: 'Nov',
-      category: 'Food',
-      author: 'Admin',
-      comments: '65',
-      title: 'Eget lobortis lorem lacinia. Vivamus pharetra semper,',
-      link: '#',
-    },
-    {
-      image: '/images/news.png',
-      date: '21',
-      month: 'Nov',
-      category: 'Food',
-      author: 'Admin',
-      comments: '65',
-      title: 'Maecenas blandit risus elementum mauris malesuada.',
-      link: '#',
-    },
-  ];
+  const [news, setNews] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        // Fetch categories from Supabase
+        const { data, error } = await supabase
+          .from('latest_news') // Make sure this matches your table name
+          .select('*')
+          .order('id'); // Ensure sorting by ID
+        // More detailed logging
+        console.log('Supabase Response:', {
+          data: data,
+          dataLength: data?.length,
+          error: error,
+        });
+
+        if (error) throw error;
+
+        setNews(data || []);
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching news:', error);
+        setError(error.message);
+        setLoading(false);
+      }
+    };
+
+    fetchCategories();
+  }, []);
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-8 w-full max-w-[1320px] font-poppins">
+        <div className="text-center">Loading categories...</div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <div className="container mx-auto px-4 py-8 w-full max-w-[1320px] font-poppins">
+        <div className="text-center text-red-500">
+          Failed to load categories: {error}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="font-poppins mx-auto px-4 py-8  w-full max-w-[1320px]">
-      <h2 className="text-xl text-center text-black font-bold mb-8 ">
+    <div className="font-poppins mx-auto px-4 py-8 w-full max-w-[1320px]">
+      <h2 className="text-xl text-center text-black font-bold mb-8">
         Latest News
       </h2>
-      <div className="flex justify-around overflow-x-auto space-x-4  pb-4 mx-auto">
-        {news.map((item, index) => (
+      <div className="flex justify-around overflow-x-auto space-x-4 pb-4 mx-auto">
+        {news.map((item) => (
           <div
-            key={index}
+            key={item.id}
             className="bg-white rounded-lg shadow-md overflow-hidden flex-shrink-0 w-80"
           >
             <div className="relative">
               <img
-                src={item.image}
+                src={item.images}
                 alt={item.title}
-                className="h-48 object-cover"
+                className="h-48 w-full object-cover"
               />
-              <div className="absolute bottom-4 left-2 bg-white rounded-lg px-2 py-1 text-center">
+              {/* <div className="absolute bottom-4 left-2 bg-white rounded-lg px-2 py-1 text-center">
                 <p className="font-bold text-lg">{item.date}</p>
                 <p className="text-xs uppercase">{item.month}</p>
-              </div>
+              </div> */}
             </div>
             <div className="p-4">
               <p className="text-sm text-gray-500 mb-2">
-                {item.category} | By {item.author} | {item.comments} Comments
+                {item.category} | {item.author} | {item.comments} Comments
               </p>
               <h3 className="text-lg font-semibold mb-2 text-[#2C742F]">
                 {item.title}
               </h3>
               <a
-                href={item.link}
+                href={`/news/${item.id}`}
                 className="text-[#00B207] flex items-center hover:underline"
               >
                 Read More
