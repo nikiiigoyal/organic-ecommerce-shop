@@ -72,7 +72,14 @@ export function SignInForm() {
               <input className="w-5 h-5 mr-2" type="checkbox" />
               <span className="text-sm text-gray-600">Remember me</span>
             </label>
-            <a href="#" className="text-gray-600 text-sm hover:underline">
+            <a
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/Forgot-password');
+              }}
+              href="#"
+              className="text-gray-600 text-sm hover:underline"
+            >
               Forgot Password?
             </a>
           </div>
