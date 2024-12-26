@@ -20,6 +20,8 @@ import ShoppingCart from './components/pages/shoppingCart/ShoppingCart';
 import { Settings } from './components/pages/settings';
 import { AuthProvider } from './components/AuthProvider';
 import { CartPayment } from './components/pages/cartPayment';
+import { ForgotPassword } from './components/pages/ForgotPassword';
+import { ResetPassword } from './components/pages/ResetPassword';
 
 function App() {
   const [selectedProduct, setSelectedProduct] = useState(null);
@@ -71,6 +73,9 @@ function App() {
 
             <Route path="/signin" element={<SignInForm />}></Route>
             <Route path="/CreateForm" element={<CreateForm />} />
+
+            <Route path="/forgot-password" element={<ForgotPassword />}></Route>
+            <Route path="/reset-password" element={<ResetPassword />}></Route>
             <Route path="/about" element={<About />}></Route>
             <Route path="/contact" element={<Contact />}></Route>
             <Route path="/register" element={<CreateForm />}></Route>
