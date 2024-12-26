@@ -72,10 +72,6 @@ const LatestNews = () => {
                 alt={item.title}
                 className="h-48 w-full object-cover"
               />
-              {/* <div className="absolute bottom-4 left-2 bg-white rounded-lg px-2 py-1 text-center">
-                <p className="font-bold text-lg">{item.date}</p>
-                <p className="text-xs uppercase">{item.month}</p>
-              </div> */}
             </div>
             <div className="p-4">
               <p className="text-sm text-gray-500 mb-2">
