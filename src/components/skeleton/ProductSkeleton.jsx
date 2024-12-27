@@ -1,6 +1,37 @@
 const ProductCardSkeleton = () => {
   return (
     <>
+      <div className="features w-full max-w-[1320px] mx-auto flex justify-around p-[10px]">
+        <div className="feature flex">
+          <div></div>
+          <div>
+            <h3 className="font-semibold text-[#1A1A1A]"></h3>
+            <p className="text-gray-600 text-[14px]"></p>
+          </div>
+        </div>
+        <div className="feature flex">
+          <div></div>
+          <div>
+            <h3 className="font-semibold text-[#1A1A1A]"></h3>
+            <p className="text-gray-600 text-[14px]"></p>
+          </div>
+        </div>
+        <div className="feature flex">
+          <div></div>
+          <div>
+            <h3 className="font-semibold text-[#1A1A1A]"></h3>
+            <p className="text-gray-600 text-[14px]"> </p>
+          </div>
+        </div>
+        <div className="feature flex">
+          <div></div>
+          <div>
+            <h3 className="font-semibold text-[#1A1A1A]"></h3>
+            <p className="text-gray-600 text-[14px]"></p>
+          </div>
+        </div>
+      </div>
+
       <div className="w-full bg-white rounded-lg shadow-md p-4 animate-pulse">
         {/* product image skeelton */}
         <div className="w-full h-48 bg-gray-200 rounded-lg mb-4"></div>
