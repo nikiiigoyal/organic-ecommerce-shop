@@ -2,7 +2,7 @@ const EcobazarSkeleton = () => {
   return (
     <div
       className="w-full
-     max-w-7xl mx-auto"
+     max-w-5xl mx-auto"
     >
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b">
