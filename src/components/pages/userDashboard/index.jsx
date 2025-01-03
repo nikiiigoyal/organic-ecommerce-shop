@@ -70,7 +70,6 @@ const Dashboard = () => {
             </div>
           </div>
 
-          {/* Order History - full width below */}
           <div className="bg-white rounded-lg shadow-sm p-6">
             <OrderHistoryTable orders={orders} />
           </div>
