@@ -80,7 +80,7 @@ const Header = () => {
         <div className="flex justify-between items-center w-[70%] mx-auto">
           <div className="flex items-center text-sm text-gray-600">
             <img src="/images/MapPin.jpg" className="mr-2"></img>
-            <span>Store Location: Lincoln- 344, Illinois, Chicago, USA</span>
+            <span>Store Location: Sirol road Gwalior</span>
           </div>
           <div className="top-right flex items-center space-x-4 pt text-sm">
             <select className="language-select flex items-center bg-transparent outline-none">
