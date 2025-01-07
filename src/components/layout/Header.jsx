@@ -85,7 +85,6 @@ const Header = () => {
           <div className="top-right flex items-center space-x-4 pt text-sm">
             <select className="language-select flex items-center bg-transparent outline-none">
               <option className="text-gray-600 text-[12px] ml-1 ">Eng</option>
-              {/* Add more language options */}
             </select>
             <select className="currency-select text-gray-600 flex items-center bg-transparent outline-none">
               <option className="text-gray-600 ml-1 text-[12px] bg-transparent">
