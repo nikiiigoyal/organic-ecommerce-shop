@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import BannerAndFeatures from './Banner';
 import PopularCategories from './PopularCategories';
-// import { products } from "../../../../constants";
+
 import SaleImages from './SaleImages';
 import HotDeals from './HotDeals';
 import LatestNews from './LatestNews';
