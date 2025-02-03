@@ -29,7 +29,6 @@ export function CreateForm() {
 
       if (error) throw error;
       console.log('done');
-      // setMessage('Check your email for the confirmation link!')
     } catch (error) {
       console.log('Error', error);
     }
