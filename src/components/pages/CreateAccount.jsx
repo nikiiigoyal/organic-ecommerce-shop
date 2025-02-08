@@ -22,7 +22,7 @@ export function CreateForm() {
         options: {
           emailRedirectTo: undefined, // Disable email redirect
           data: {
-            email_confirmed_at: new Date().toISOString(), // Add confirmed timestamp
+            email_confirmed_at: new Date().toISOString(),
           },
         },
       });
