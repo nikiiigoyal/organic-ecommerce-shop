@@ -62,19 +62,6 @@ export function CreateForm() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            {/* <input
-              className="w-full border border-[#E6E6E6] text-gray-700 p-3 pr-10 rounded-md"
-              placeholder="Confirm Password"
-              type="password"
-              value={conirmPassword}
-              onChange={(e) => {
-                setConfirmPassword(e.target.value);
-                // console.log(e.target.value)
-              }}
-            /> */}
-            {/* <span className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
-              <span className="material-symbols-outlined">visibility</span>
-            </span> */}
           </div>
           <div className="flex justify-between items-center">
             <label className="flex items-center">
