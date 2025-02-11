@@ -81,7 +81,7 @@ export function CreateForm() {
         </form>
 
         <p className="mt-6 text-sm text-gray-600">
-          Already have account?{' '}
+          Already have an account?{' '}
           <a
             href="/Signin"
             className="text-black font-semibold hover:underline"
