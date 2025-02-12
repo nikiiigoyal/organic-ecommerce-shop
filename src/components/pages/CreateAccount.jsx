@@ -20,7 +20,7 @@ export function CreateForm() {
         email,
         password,
         options: {
-          emailRedirectTo: undefined, // Disable email redirect
+          emailRedirectTo: undefined,
           data: {
             email_confirmed_at: new Date().toISOString(),
           },
