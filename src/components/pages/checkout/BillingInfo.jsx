@@ -91,7 +91,7 @@ export const BillingInfo = () => {
         </div>
         <div className="">
           <label className="">
-            <h3 className="text-[#1A1A1A] text-[16px] mb-2">Phone</h3>
+            <h3 className="text-[#1A1A1A] text-[16px] mb-2">PHone</h3>
             <input
               className="px-5 py-3 text-[14px] text-[#999999] border border-[#E5E5E5] rounded-sm"
               placeholder="Phone number"
