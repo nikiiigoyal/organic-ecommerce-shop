@@ -68,7 +68,7 @@ const HotDeals = () => {
 
             <div className="mt-4">
               <p className="text-sm text-gray-500 text-center">
-                Hurry up! Offer ends in:
+                Hurry up! Offer ends in
               </p>
               <div className="flex justify-around items-center mt-2">
                 {['01', '23', '34', '57'].map((time, index) => (
