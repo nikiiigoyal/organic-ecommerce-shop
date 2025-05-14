@@ -2,24 +2,27 @@ import { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import { supabase } from '@/supabase';
+import {
+  FaBars,
+  FaTimes,
+  FaSearch,
+  FaShoppingBag,
+  FaHeart,
+  FaPhone,
+  FaMapMarkerAlt,
+} from 'react-icons/fa';
 
 const Header = () => {
   const { user } = useContext(AuthContext);
-  // console.log(user)
   const navigate = useNavigate();
-
-  // search states
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [error, setError] = useState(null);
 
-  // search handler
-
   const handleSearch = async (e) => {
     e.preventDefault();
-
-    //reset previous state
     setSearchResults(null);
     setError(null);
 
@@ -30,7 +33,6 @@ const Header = () => {
 
     try {
       setIsLoading(true);
-
       const { data, error } = await supabase
         .from('grocery_products')
         .select('*')
@@ -39,7 +41,6 @@ const Header = () => {
 
       if (error) throw error;
 
-      // If no results found
       if (!data || data.length === 0) {
         setError(`No products found for "${searchTerm}"`);
         setSearchResults([]);
@@ -65,7 +66,7 @@ const Header = () => {
       setIsLoading(false);
     }
   };
-  //handler for clearing search
+
   const handleClearSearch = () => {
     setSearchTerm('');
     setSearchResults(null);
@@ -73,28 +74,31 @@ const Header = () => {
     navigate('/products', { state: { searchResults: null, searchTerm: '' } });
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header font-poppins">
-      {/* top bar */}
-      <div className="top-bar bg-[#fffff] px-4 py-2">
-        <div className="flex justify-between items-center w-[70%] mx-auto">
+      {/* Top Bar - Hidden on mobile */}
+      <div className="top-bar bg-[#fffff] px-4 py-2 hidden md:block">
+        <div className="flex justify-between items-center w-full md:w-[70%] mx-auto">
           <div className="flex items-center text-sm text-gray-600">
-            <img src="/images/MapPin.jpg" className="mr-2"></img>
+            <FaMapMarkerAlt className="mr-2" />
             <span>Store Location: Sirol road Gwalior</span>
           </div>
-          <div className="top-right flex items-center space-x-4 pt text-sm">
+          <div className="top-right flex items-center space-x-4 text-sm">
             <select className="language-select flex items-center bg-transparent outline-none">
-              <option className="text-gray-600 text-[12px] ml-1 ">Eng</option>
+              <option className="text-gray-600 text-[12px] ml-1">Eng</option>
             </select>
             <select className="currency-select text-gray-600 flex items-center bg-transparent outline-none">
               <option className="text-gray-600 ml-1 text-[12px] bg-transparent">
                 USD
               </option>
-              {/* Add more currency options */}
             </select>
             <span className="text-gray-100">|</span>
             {user?.email ? (
-              <p>Welcome! {user.email}</p>
+              <p className="text-xs md:text-sm">Welcome! {user.email}</p>
             ) : (
               <Link to="/signin" className="text-gray-600 text-[12px]">
                 Sign In / Sign Up
@@ -103,23 +107,32 @@ const Header = () => {
           </div>
         </div>
       </div>
-      {/* main header */}
-      <div className="main-header flex justify-between items-center p-4  w-[70%] mx-auto">
-        <div className="logo items-center flex">
-          <Link to="/" className="flex items-center flex-row">
-            <img
-              src="/images/headerLogo.jpg"
-              alt="Ecobazar"
-              className="h-[20px] mr-2"
-            />
-            <span className="text-black font-semibold text-[32px]">
-              Ecobazar
-            </span>
-          </Link>
+
+      {/* Main Header */}
+      <div className="main-header flex flex-col md:flex-row justify-between items-center p-4 w-full md:w-[70%] mx-auto">
+        {/* Mobile Menu Button */}
+        <div className="flex justify-between items-center w-full md:hidden">
+          <div className="logo items-center flex">
+            <Link to="/" className="flex items-center flex-row">
+              <img
+                src="/images/headerLogo.jpg"
+                alt="Ecobazar"
+                className="h-[20px] mr-2"
+              />
+              <span className="text-black font-semibold text-xl md:text-[32px]">
+                Ecobazar
+              </span>
+            </Link>
+          </div>
+          <button onClick={toggleMenu} className="md:hidden text-gray-700">
+            {isMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          </button>
         </div>
-        <div className="search-bar flex-1 max-w-xl mx-8">
+
+        {/* Search Bar - Full width on mobile */}
+        <div className="search-bar w-full md:flex-1 md:max-w-xl mx-0 md:mx-8 mt-4 md:mt-0">
           <div className="relative">
-            <form onSubmit={handleSearch}>
+            <form onSubmit={handleSearch} className="flex">
               <input
                 type="text"
                 placeholder="Search"
@@ -128,29 +141,27 @@ const Header = () => {
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
               {searchTerm && (
-                <div className="flex">
-                  <button type="button" onClick={handleClearSearch}>
-                    <span className="material-symbols-outlined">close</span>
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={handleClearSearch}
+                  className="absolute right-12 top-1/2 transform -translate-y-1/2 text-gray-500"
+                >
+                  <FaTimes />
+                </button>
               )}
-
               <button
                 type="submit"
-                className="absolute right-0 top-0 px-[20px] py-[10px] bg-[#4CAF50] text-white border-none cursor-pointer rounded-r-md h-full"
-                onClick={handleSearch}
+                className="px-4 bg-[#4CAF50] text-white border-none cursor-pointer rounded-r-md"
               >
-                Search
+                <FaSearch />
               </button>
             </form>
-            {/* loading indicator */}
             {isLoading && (
               <div className="loader-container">
                 <div className="loader"></div>
                 <p>Searching products...</p>
               </div>
             )}
-            {/* Error Handling */}
             {error && (
               <div className="error-container">
                 <p>{error}</p>
@@ -158,61 +169,93 @@ const Header = () => {
             )}
           </div>
         </div>
-        <div className="cart flex items-center space-x-6">
-          <img src="/images/Heart.png"></img>
-          <div className="flex">
-            <div className="relative flex items-center pl-1">
-              <Link to="/cart">
-                <span className="cart-icon">
-                  <img src="/images/Bag.png"></img>
+
+        {/* Cart - Hidden on mobile when menu is open */}
+        {!isMenuOpen && (
+          <div className="cart flex items-center space-x-6 mt-4 md:mt-0">
+            <FaHeart className="text-gray-700 text-xl" />
+            <div className="flex">
+              <div className="relative flex items-center pl-1">
+                <Link to="/cart">
+                  <FaShoppingBag className="text-gray-700 text-xl" />
+                </Link>
+              </div>
+              <div className="flex flex-col ml-2">
+                <h3 className="text-[#4D4D4D] text-[11px]">Shopping cart</h3>
+                <span className="text-[#1A1A1A] text-sm font-semibold">
+                  $57.00
                 </span>
-              </Link>
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-[#4D4D4D] text-[11px]">Shopping cart</h3>
-              <span className="text-[#1A1A1A] text-sm font-semibold mr-2">
-                $57.00
-              </span>
+              </div>
             </div>
           </div>
-        </div>
+        )}
       </div>
-      {/* navigation */}
-      <nav className="main-nav text-white bg-[#333] px-5 py-[10px] flex justify-between items-center">
-        <ul className="flex space-x-6 ml-6">
-          <li>
-            <Link to="/" className="py-3 px-2 inline-block">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/shop" className="py-3 px-2 inline-block">
-              Shop
-            </Link>
-          </li>
-          <li>
-            <Link to="/pages" className="py-3 px-2 inline-block">
-              Pages
-            </Link>
-          </li>
-          <li>
-            <Link to="/blog" className="py-3 px-2 inline-block">
-              Blog
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="py-3 px-2 inline-block">
-              About Us
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="py-3 px-2 inline-block">
-              Contact Us
-            </Link>
-          </li>
-        </ul>
-        <div className="phone text-white flex items-center gap-[8px]">
-          <img src="/images/phone.png"></img>
+
+      {/* Navigation - Mobile menu */}
+      <nav
+        className={`main-nav text-white bg-[#333] ${isMenuOpen ? 'block' : 'hidden'} md:block`}
+      >
+        <div className="container mx-auto px-4 py-2">
+          <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6">
+            <li>
+              <Link
+                to="/"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/shop"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Shop
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/pages"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Pages
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/blog"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About Us
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/contact"
+                className="py-2 px-2 inline-block"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact Us
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/* Phone - Only visible on mobile */}
+        <div className="phone text-white flex items-center gap-2 px-4 py-3 md:hidden">
+          <FaPhone />
           <span>(219) 555-0114</span>
         </div>
       </nav>
