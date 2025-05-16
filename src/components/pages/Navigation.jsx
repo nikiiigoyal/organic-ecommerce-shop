@@ -2,21 +2,29 @@ import { NavLink, Outlet, useParams } from 'react-router-dom';
 
 const Navigation = () => {
   const { pageType } = useParams();
-  console.log('pageType', pageType);
+
   return (
-    <div className="flex">
-      <div className="flex flex-col border border-[#E6E6E6] p-5 font-poppins w-[300px] h-screen">
-        <h1 className="text-[#1A1A1A] text-[20px] mb-2">Navigation</h1>
+    <div className="flex flex-col lg:flex-row">
+      {/* Mobile Header (visible only on small screens) */}
+      <div className="lg:hidden flex items-center justify-between p-4 bg-white border-b border-[#E6E6E6]">
+        <h1 className="text-[#1A1A1A] text-lg font-medium">Menu</h1>
+        {/* Mobile menu button would go here */}
+      </div>
+
+      {/* Sidebar Navigation - hidden on mobile by default */}
+      <div className="hidden lg:flex flex-col border-r border-[#E6E6E6] p-5 font-poppins w-[250px] lg:w-[300px] h-screen sticky top-0">
+        <h1 className="text-[#1A1A1A] text-xl lg:text-[20px] mb-4">
+          Navigation
+        </h1>
         <nav className="space-y-2">
           <NavLink
             to="/pages"
             end
             className={({ isActive }) => `
-                            flex items-center space-x-2 p-2 text-[#666666]  
-                            ${isActive ? 'bg-[#EDF2EE]  border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-200'}
-                        `}
+              flex items-center space-x-3 p-3 text-[#666666] rounded-lg
+              ${isActive ? 'bg-[#EDF2EE] border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-100'}
+            `}
           >
-            {/* Dashboard Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -31,17 +39,18 @@ const Navigation = () => {
                 d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
               />
             </svg>
-            <span>Dashboard</span>
+            <span className="text-sm lg:text-base">Dashboard</span>
           </NavLink>
 
+          {/* Other NavLinks with the same pattern */}
+          {/* Order History */}
           <NavLink
             to="/pages/orderHistory"
             className={({ isActive }) => `
-                            flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
-                        `}
+              flex items-center space-x-3 p-3 rounded-lg
+              ${isActive ? 'bg-[#EDF2EE] border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-100'}
+            `}
           >
-            {/* List Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -56,17 +65,17 @@ const Navigation = () => {
                 d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
               />
             </svg>
-            <span>Order History</span>
+            <span className="text-sm lg:text-base">Order History</span>
           </NavLink>
 
+          {/* Wishlist */}
           <NavLink
             to="/pages/wishlist"
             className={({ isActive }) => `
-                            flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
-                        `}
+              flex items-center space-x-3 p-3 rounded-lg
+              ${isActive ? 'bg-[#EDF2EE] border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-100'}
+            `}
           >
-            {/* Heart Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -81,17 +90,17 @@ const Navigation = () => {
                 d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
               />
             </svg>
-            <span>Wishlist</span>
+            <span className="text-sm lg:text-base">Wishlist</span>
           </NavLink>
 
+          {/* Shopping Cart */}
           <NavLink
             to="/pages/cart"
             className={({ isActive }) => `
-                            flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
-                        `}
+              flex items-center space-x-3 p-3 rounded-lg
+              ${isActive ? 'bg-[#EDF2EE] border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-100'}
+            `}
           >
-            {/* Shopping Cart Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -106,17 +115,17 @@ const Navigation = () => {
                 d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
               />
             </svg>
-            <span>Shopping Cart</span>
+            <span className="text-sm lg:text-base">Shopping Cart</span>
           </NavLink>
 
+          {/* Settings */}
           <NavLink
             to="/pages/settings"
             className={({ isActive }) => `
-                            flex items-center space-x-2 p-2 rounded 
-                            ${isActive ? 'bg-blue-100 text-blue-600 border border-l-[#00B207]' : 'hover:bg-gray-200'}
-                        `}
+              flex items-center space-x-3 p-3 rounded-lg
+              ${isActive ? 'bg-[#EDF2EE] border-l-4 border-l-[#00B207] text-black' : 'hover:bg-gray-100'}
+            `}
           >
-            {/* Settings Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -137,14 +146,14 @@ const Navigation = () => {
                 d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
               />
             </svg>
-            <span>Settings</span>
+            <span className="text-sm lg:text-base">Settings</span>
           </NavLink>
 
+          {/* Logout */}
           <NavLink
             to="/pages/LogOut"
-            className="flex items-center space-x-2 p-2 rounded hover:bg-red-100 hover:text-red-600"
+            className="flex items-center space-x-3 p-3 rounded-lg hover:bg-red-100 hover:text-red-600"
           >
-            {/* Logout Icon */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="w-5 h-5"
@@ -159,15 +168,16 @@ const Navigation = () => {
                 d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"
               />
             </svg>
-            <span>Logout</span>
+            <span className="text-sm lg:text-base">Logout</span>
           </NavLink>
         </nav>
       </div>
 
-      {/* Crucial: Outlet to render child routes */}
+      {/* Mobile Menu (would be toggled) */}
+      {/* You would implement the mobile menu toggle functionality here */}
 
-      <div>Hello content</div>
-      <div className="flex-1 p-6">
+      {/* Main Content Area */}
+      <div className="flex-1 p-4 lg:p-6">
         <Outlet />
       </div>
     </div>
