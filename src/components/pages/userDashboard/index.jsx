@@ -7,17 +7,20 @@ const Dashboard = () => {
   const [user, setUser] = useState(null);
   const [orders, setOrders] = useState([]);
   const [billingAddress, setBillingAddress] = useState(null);
+
   useEffect(() => {
     fetchUserData();
     fetchOrderHistory();
     fetchBillingAddress();
   }, []);
+
   const fetchUserData = () => {
     setUser({
       name: 'Dianee Russell',
       profilePicture: 'images/avatar.png',
     });
   };
+
   const fetchOrderHistory = () => {
     setOrders([
       { id: '#738', date: '8 Sep, 2020', total: 135.0, status: 'Processing' },
@@ -28,8 +31,8 @@ const Dashboard = () => {
       { id: '#492', date: '22 Oct, 2020', total: 345.0, status: 'Completed' },
     ]);
   };
+
   const fetchBillingAddress = () => {
-    // Fetch billing address data from API
     setBillingAddress({
       fullName: 'Dianne Russell',
       streetAddress: '4140 Parker Rd',
@@ -40,37 +43,35 @@ const Dashboard = () => {
       phone: '(671) 555-0110',
     });
   };
+
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* First grid for overall layout - splits into sidebar and main content */}
-      <div className="grid grid-cols-12 gap-6 p-6">
-        {/* Sidebar Navigation - takes 2 columns on large screens */}
-        <div className="col-span-12 lg:col-span-2">
+      {/* Main grid layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 p-4 md:p-6">
+        {/* Sidebar Navigation - hidden on mobile, appears on large screens */}
+        <div className="hidden lg:block lg:col-span-2">
           {/* <div className="bg-white rounded-lg shadow-sm">
-                        <Navigation />
-                    </div> */}
+            <Navigation />
+          </div> */}
         </div>
 
-        {/* Main Content Area - takes remaining 10 columns */}
-        <div className="col-span-12 lg:col-span-10">
-          {/* Second grid for the top row (Profile and Billing) */}
-          <div className="grid grid-cols-2 gap-6 mb-6">
-            {/* User Profile - takes first column */}
-            <div className="col-span-1">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                {user && <UserProfile user={user} />}
-              </div>
+        {/* Main Content Area */}
+        <div className="col-span-1 lg:col-span-10 space-y-4 md:space-y-6">
+          {/* Top row - becomes vertical stack on mobile */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+            {/* User Profile */}
+            <div className="bg-white rounded-lg shadow-sm p-4 md:p-6">
+              {user && <UserProfile user={user} />}
             </div>
 
-            {/* Billing Address - takes second column */}
-            <div className="col-span-1">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                {billingAddress && <BillingAddress address={billingAddress} />}
-              </div>
+            {/* Billing Address */}
+            <div className="bg-white rounded-lg shadow-sm p-4 md:p-6">
+              {billingAddress && <BillingAddress address={billingAddress} />}
             </div>
           </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-6">
+          {/* Order History Table */}
+          <div className="bg-white rounded-lg shadow-sm p-4 md:p-6">
             <OrderHistoryTable orders={orders} />
           </div>
         </div>
@@ -78,4 +79,5 @@ const Dashboard = () => {
     </div>
   );
 };
+
 export default Dashboard;
