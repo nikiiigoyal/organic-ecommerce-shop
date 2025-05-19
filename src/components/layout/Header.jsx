@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider';
 import { supabase } from '@/supabase';
@@ -20,6 +20,7 @@ const Header = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [searchResults, setSearchResults] = useState(null);
   const [error, setError] = useState(null);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const handleSearch = async (e) => {
     e.preventDefault();
@@ -30,6 +31,40 @@ const Header = () => {
       navigate('/products', { state: { searchTerm: '' } });
       return;
     }
+    // Fetch cart total when component mounts
+    useEffect(() => {
+      const fetchCartTotal = async () => {
+        if (user) {
+          const total = await getCartTotal();
+          setCartTotal(total);
+        }
+      };
+
+      fetchCartTotal();
+
+      // Setup realtime listener for cart changes
+      const cartChannel = supabase
+        .channel('cart_changes')
+        .on(
+          'postgres_changes',
+          {
+            event: '*',
+            schema: 'public',
+            table: 'cart_items',
+            filter: user ? `user_id=eq.${user.id}` : undefined,
+          },
+          () => {
+            fetchCartTotal();
+          }
+        )
+        .subscribe();
+
+      return () => {
+        supabase.removeChannel(cartChannel);
+      };
+    }, [user]);
+
+    // Rest of your header code...
 
     try {
       setIsLoading(true);
@@ -173,7 +208,9 @@ const Header = () => {
         {/* Cart - Hidden on mobile when menu is open */}
         {!isMenuOpen && (
           <div className="cart flex items-center space-x-6 mt-4 md:mt-0">
-            <FaHeart className="text-gray-700 text-xl" />
+            <Link to="/wishlist">
+              <FaHeart className="text-gray-700 text-xl cursor-pointer" />
+            </Link>
             <div className="flex">
               <div className="relative flex items-center pl-1">
                 <Link to="/cart">
@@ -183,7 +220,7 @@ const Header = () => {
               <div className="flex flex-col ml-2">
                 <h3 className="text-[#4D4D4D] text-[11px]">Shopping cart</h3>
                 <span className="text-[#1A1A1A] text-sm font-semibold">
-                  $57.00
+                  ${cartTotal.toFixed(2)}
                 </span>
               </div>
             </div>
