@@ -4,33 +4,6 @@ const EcobazarSkeleton = () => {
       className="w-full
      max-w-5xl mx-auto"
     >
-      {/* Header
-      <div className="flex items-center justify-between p-4 border-b">
-        {/* Logo */}
-      {/* <div className="h-8 w-32 bg-gray-200 animate-pulse rounded"></div> */}
-
-      {/* Search Bar */}
-      {/* <div className="flex-1 max-w-xl mx-8">
-          <div className="h-12 bg-gray-200 animate-pulse rounded-lg"></div>
-        </div> */}
-
-      {/* Cart and Wishlist */}
-      {/* <div className="flex gap-4">
-          <div className="h-8 w-8 bg-gray-200 animate-pulse rounded-full"></div>
-          <div className="h-8 w-24 bg-gray-200 animate-pulse rounded"></div>
-        </div>
-      </div> */}
-
-      {/* Navigation */}
-      {/* <div className="flex items-center gap-6 p-4 bg-gray-50">
-        {[...Array(5)].map((_, i) => (
-          <div
-            key={i}
-            className="h-4 w-20 bg-gray-200 animate-pulse rounded"
-          ></div>
-        ))}
-      </div> */}
-
       {/* Main Content */}
       <div className="p-4">
         <div className="flex gap-4">
