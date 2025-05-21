@@ -30,7 +30,6 @@ const EcobazarSkeleton = () => {
               </div>
             </div>
 
-            {/* Best Deal Banner */}
             <div className="h-48 bg-gray-200 animate-pulse rounded-lg relative">
               <div className="absolute top-6 left-6 space-y-2">
                 <div className="h-4 w-20 bg-gray-300 animate-pulse rounded"></div>
