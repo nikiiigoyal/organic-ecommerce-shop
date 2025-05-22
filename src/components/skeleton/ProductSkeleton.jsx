@@ -4,7 +4,6 @@ const EcobazarSkeleton = () => {
       className="w-full
      max-w-5xl mx-auto"
     >
-      {/* Main Content */}
       <div className="p-4">
         <div className="flex gap-4">
           {/* Main Hero Banner */}
